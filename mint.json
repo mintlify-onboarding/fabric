@@ -1,0 +1,226 @@
+{
+    "name": "Fabric",
+    "logo": {
+      "light": "/logo/light.png",
+      "dark": "/logo/dark.png"
+    },
+    "favicon": "/favicon.webp",
+    "colors": {
+      "primary": "#9d3090",
+      "light": "#e245c5",
+      "dark": "#9d3090",
+      "anchors": {
+        "from": "#1e092d",
+        "to": "#e245c5"
+      }
+    },
+    "topbarCtaButton": {
+      "name": "Request Demo",
+      "url": "https://fabric.inc/demo-request"
+    },
+    "anchors": [
+      {
+        "name": "Support",
+        "icon": "https://support.fabric.inc/hc/en-us/requests/new",
+        "url": "phone"
+      }
+    ],
+    "navigation": [
+        {
+            "group": "Allocations",
+            "pages": [
+              "api-reference/allocations/search-for-allocations-by-query",
+              "api-reference/allocations/update-allocation-or-initiate-reallocation",
+              "api-reference/allocations/get-allocation-by-id"
+            ]
+          },
+          {
+            "group": "Backorders Preorders",
+            "pages": [
+              "api-reference/backorders-preorders/record-customer-agreement-to-delay-shipment",
+              "api-reference/backorders-preorders/search-for-backorders-or-preorders-by-query",
+              "api-reference/backorders-preorders/get-backorder-or-preorder-details-by-id"
+            ]
+          },
+          {
+            "group": "Exports",
+            "pages": [
+              "api-reference/exports/export-data-by-query",
+              "api-reference/exports/get-export-jobs-by-query",
+              "api-reference/exports/get-file-headers-by-module",
+              "api-reference/exports/get-export-job-by-exportid"
+            ]
+          },
+          {
+            "group": "Imports",
+            "pages": [
+              "api-reference/imports/get-uploaded-files-that-match-specified-criteria",
+              "api-reference/imports/get-uploaded-file-status-and-details",
+              "api-reference/imports/upload-bulk-file-to-import-data"
+            ]
+          },
+          {
+            "group": "Invoices",
+            "pages": [
+              "api-reference/invoices/acknowledge-financial-transaction",
+              "api-reference/invoices/get-invoice-by-id",
+              "api-reference/invoices/search-for-invoices"
+            ]
+          },
+          {
+            "group": "Shopping Lists",
+            "pages": [
+              "api-reference/shopping-lists/create-shopping-list",
+              "api-reference/shopping-lists/get-shopping-lists-of-a-user",
+              "api-reference/shopping-lists/get-a-shopping-list-by-id",
+              "api-reference/shopping-lists/update-a-shopping-list-by-id",
+              "api-reference/shopping-lists/delete-a-shopping-list-by-id"
+            ]
+          },
+          {
+            "group": "Shopping List Items",
+            "pages": [
+              "api-reference/shopping-list-items/add-or-update-items-in-a-shopping-list",
+              "api-reference/shopping-list-items/get-shopping-lists-of-a-user-along-with-associated-items",
+              "api-reference/shopping-list-items/delete-items-from-shopping-list",
+              "api-reference/shopping-list-items/get-shopping-list-and-its-items",
+              "api-reference/shopping-list-items/get-shopping-list-items-by-list-id"
+            ]
+          },
+          {
+            "group": "Notifications",
+            "pages": [
+              "api-reference/notifications/resend-notifications",
+              "api-reference/notifications/get-acknowledgment-receipt-for-notification"
+            ]
+          },
+          {
+            "group": "Orders",
+            "pages": [
+              "api-reference/orders/create-new-order",
+              "api-reference/orders/updates-order-pick-up-details",
+              "api-reference/orders/get-order-by-order-id",
+              "api-reference/orders/get-order-by-order-number",
+              "api-reference/orders/update-shipping-information-for-an-existing-order-by-order-id",
+              "api-reference/orders/update-shipping-information-for-an-existing-order-by-order-number",
+              "api-reference/orders/find-orders",
+              "api-reference/orders/update-customer-details-for-given-order-ids"
+            ]
+          },
+          {
+            "group": "Returns",
+            "pages": [
+              "api-reference/returns/get-return-eligibility-by-order-number",
+              "api-reference/returns/get-eligibility-of-returns-for-items-in-an-order-by-order-id",
+              "api-reference/returns/get-order-exchange-eligibility-by-order-id",
+              "api-reference/returns/get-order-exchange-eligibility-by-order-number",
+              "api-reference/returns/order-return-by-order-id",
+              "api-reference/returns/order-return-by-order-number"
+            ]
+          },
+          {
+            "group": "Cancellations",
+            "pages": [
+              "api-reference/cancellations/get-order-cancellation-eligibility-by-order-id",
+              "api-reference/cancellations/get-order-cancellation-eligibility-by-order-number",
+              "api-reference/cancellations/cancel-order-by-order-number",
+              "api-reference/cancellations/cancel-order-by-order-id"
+            ]
+          },
+          {
+            "group": "Tracking",
+            "pages": [
+              "api-reference/tracking/get-acknowledgement-for-package-tracking-by-order-number",
+              "api-reference/tracking/get-package-tracking-acknowledgement-by-order-id"
+            ]
+          },
+          {
+            "group": "Frauds",
+            "pages": [
+              "api-reference/frauds/release-fraud-order-by-order-id",
+              "api-reference/frauds/release-fraud-order",
+              "api-reference/frauds/cancel-fraud-order-by-order-id",
+              "api-reference/frauds/cancel-fraud-order-by-order-number"
+            ]
+          },
+          {
+            "group": "Payments",
+            "pages": [
+              "api-reference/payments/update-status-of-order-payment-by-order-number",
+              "api-reference/payments/update-order-payment-status-by-order-id"
+            ]
+          },
+          {
+            "group": "Appeasements",
+            "pages": [
+              "api-reference/appeasements/create-appeasement-by-order-number",
+              "api-reference/appeasements/create-appeasement-by-order-id"
+            ]
+          },
+          {
+            "group": "Credits",
+            "pages": [
+              "api-reference/credits/check-credits-eligibility-by-order-id",
+              "api-reference/credits/create-credits-by-order-id",
+              "api-reference/credits/update-credits-by-order-id"
+            ]
+          },
+          {
+            "group": "Shipments",
+            "pages": [
+              "api-reference/shipments/create-new-shipment",
+              "api-reference/shipments/acknowledge-shipment",
+              "api-reference/shipments/create-re-shipment",
+              "api-reference/shipments/find-shipments",
+              "api-reference/shipments/update-shipment-tracking",
+              "api-reference/shipments/update-gift-card-activation-status",
+              "api-reference/shipments/get-shipment-by-id"
+            ]
+          },
+          {
+            "group": "Shipping Methods",
+            "pages": [
+              "api-reference/shipping-methods/create-shipping-method",
+              "api-reference/shipping-methods/find-shipping-methods",
+              "api-reference/shipping-methods/get-shipping-method",
+              "api-reference/shipping-methods/update-shipping-method",
+              "api-reference/shipping-methods/delete-shipping-method"
+            ]
+          },
+          {
+            "group": "Shipping Method Items",
+            "pages": [
+              "api-reference/shipping-method-items/add-items-to-shipping-method",
+              "api-reference/shipping-method-items/get-shipping-methods",
+              "api-reference/shipping-method-items/delete-items-from-shipping-method",
+              "api-reference/shipping-method-items/get-item-ids-for-given-shipping-method"
+            ]
+          },
+          {
+            "group": "Webhooks",
+            "pages": [
+              "api-reference/webhooks/get-all-webhook-definitions",
+              "api-reference/webhooks/configure-new-webhook",
+              "api-reference/webhooks/search-webhook-event-logs",
+              "api-reference/webhooks/get-webhook-by-id",
+              "api-reference/webhooks/update-webhook-by-id",
+              "api-reference/webhooks/delete-webhook-by-id",
+              "api-reference/webhooks/retry-webhook"
+            ]
+          }
+    ],
+    "footerSocials":
+      {
+          "twitter": "https://twitter.com/fabric_commerce?lang=en",
+          "linkedin": "https://www.linkedin.com/company/teamfabric/"
+      }
+  }
+
+
+
+
+
+
+
+
+
