@@ -14,6 +14,10 @@
         "to": "#e245c5"
       }
     },
+    "feedback": {
+      "thumbsRating": true,
+      "suggestEdit": true
+    },
     "topbarCtaButton": {
       "name": "Request Demo",
       "url": "https://fabric.inc/demo-request"
@@ -21,12 +25,42 @@
     "anchors": [
       {
         "name": "Support",
-        "icon": "https://support.fabric.inc/hc/en-us/requests/new",
-        "url": "phone"
+        "icon": "headphones",
+        "url": "https://support.fabric.inc/hc/en-us/requests/new"
+      },
+      {
+        "name": "Product Releases",
+        "icon": "gift",
+        "url": "https://fabric.inc/type/product-releases"
+      },
+      {
+        "name": "Blog",
+        "icon": "newspaper",
+        "url": "https://fabric.inc/blog"
       }
     ],
+    "tabs": [
+      {
+          "name": "API Reference",
+          "url": "api-reference"
+      }
+  ],
     "navigation": [
-        {
+      {
+        "group": "Get Started",
+        "pages": [
+          "overview-1",
+          "glossary"
+        ]
+      },
+      {
+        "group": "Quickstart",
+        "pages": [
+          "shopper-experience-quickstart-guide",
+          "merchant-experience-quickstart-guide"
+        ]
+      },
+      {
             "group": "Allocations",
             "pages": [
               "api-reference/allocations/search-for-allocations-by-query",

@@ -1,0 +1,49 @@
+---
+title: "Creating a System App"
+---
+
+### Overview
+
+A **System App** is a type of API app that generates an access token to identify itself using a client ID and client secret. System Apps do not use fabric Identity to authenticate end users; rather they use system-to-system communications with fabric APIs. If you are using your own identity provider, you should create a System App.
+
+Visit the [Concepts page](/reference/identity-developer-guide-concepts) to learn more about System Apps.
+
+### Prerequisites
+
+Ensure you have [admin or restricted admin privileges](/docs/role-based-access-control) to create a new System App.
+
+### Procedure
+
+1. In the left menu, click **Settings > Developer Tools**.
+2. Click **API Apps**.  
+The **API Apps** page is displayed.
+3. Click **Create API App**.  
+The **Create an app** page is displayed.
+4. In the **App name** field, enter the name of the application.
+5. (Optional) In the **Description** field, enter a description.
+6. In the **App type** field, select **System App**.  
+The Role field appears.
+7. In the **Role** field, select one of the following roles for the app:  
+   * **Admin:** Has admin access for all fabric products.  
+   * **Developer Admin:** Can create server-to-server apps and has admin access for all fabric products.  
+   * **Developer Viewer:** Can view the details of a server-to-server app and has viewer role access for all fabric products.  
+   * **Editor:** Has editor role access for all fabric products.  
+   * **Experiences Editor:** Creates content for use on storefronts in Experiences.  
+   * **Experiences Publisher:** Reviews and approves content to be published in Experiences.  
+   * **Offers Editor:** Creates, updates, and deletes prices, promotions, customer segments, and exclusions in Offers.  
+   * **Orders & Inventory Editor:** Manages orders, locations, inventory, networks, and settings in Orders and Inventory.  
+   * **Products Editor:** Creates and updates catalog changes in Products.  
+   * **Viewer:** Has viewer role access for all fabric products.
+8. Click **Create**.
+
+The new System App is created.
+
+### Related Topics
+
+* [API Apps](/docs/api-apps)
+* [Creating a User App](/docs/creating-user-app)
+* [Managing API Apps](/docs/managing-api-apps)
+* [Concepts Page](/reference/identity-developer-guide-concepts)
+* [fabric APIs - Overview](/reference/overview)
+* [Getting Started with fabric APIs](/reference/getting-started-with-fabric-apis)
+* [Making Your First API Call](/reference/make%5Fyour%5Ffirst%5Fapi%5F%5Frequest)

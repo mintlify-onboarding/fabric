@@ -1,0 +1,265 @@
+---
+title: "Settings"
+description: "Add users and configure notifications in Marketplace."
+---
+
+> ## ❗️
+> 
+> Marketplace (Merchants) is now called Marketplace (Retailers)
+> 
+> Some of fabric's products are undergoing name changes. Marketplace (Merchants) is now Marketplace (Retailers), but you may see the old name in some places as we make the transition.
+
+## Introduction
+
+To access Retailer Settings, click on your account name in the menu at the top of the page. In the dropdown menu that appears, select **Retailer Settings**.
+
+Use the tiles on the Retailer Settings page to manage everything from general information and user privileges to API clients and webhook settings.
+
+## Default Onboarding Preferences
+
+Manage the default onboarding settings for all new suppliers. 
+
+The settings you configure here will be the default settings for all new connections. You can always override these settings when inviting a new connection.
+
+Each of these preferences is set for a new vendor automatically. These preferences can be changed for an individual vendor by going to their Connection Details Page.
+
+### Default Cost Determination
+
+All incoming items on a purchase order must have an associated cost to the retailer. Use the **Cost Method** dropdown menu to make a selection:
+
+**Specified on Platform:** Marketplace is responsible for capturing the cost in this scenario. For Proposals, an attribute called “Cost” becomes mandatory for all of a supplier’s items. It is implemented through rulesets being used by Proposal Departments and requires that suppliers define the value for the “Cost” attribute for every item when creating a proposal. For Import Requests, the same “Cost” attribute becomes mandatory for all items created by the retailer, and retailers will not be able to send import requests without the “Cost” attribute.
+
+**Specified on Order:** The retailer is responsible of providing the value of “Net Price” with every order they create in Marketplace. Orders created without “Net Price” or “Retailer Price” will be rejected by the system. 
+
+**Commission:** The retailer must specify the commission amount. Marketplace will automatically calculate the cost to be paid to the supplier based on the retail price in every item. Retailers need to provide the “Retail Price” while creating an order in Marketplace. Any order without the Retail Price will be rejected. The net price will be calculated based on the commission and retail price.
+
+After making a selection, click the **Save Preference** button.
+
+### Default Fulfillment SLA
+
+The Fulfillment SLA governs how long suppliers have to ship orders before they are considered late.
+
+Use the dropdown to choose whether suppliers have one, two, or three business days to ship orders once they receive the order.
+
+After making a selection, click the **Save Preference** button.
+
+### Default Payment Terms
+
+The retailer pays the cost of all the items on a purchase order. The Payment Terms reflect how long the retailer has in credit days before that amount is due to the supplier. For example, if set to Net 15, the retailer will need to remit the supplier within 15 days of invoice receipt.
+
+Use the dropdown to make a selection and then click the **Save Preference** button.
+
+### Default Catalog Import Method
+
+The catalog import method defines how suppliers share their product catalog with you. 
+
+Selecting **Import Requests** requires you to upload a spreadsheet on behalf of your suppliers and subsequently seek the their approval to publish the products. 
+
+Selecting **Proposals** requires suppliers to submit products to you for approval.
+
+After making a selection, click the **Save Preference** button.
+
+### Default Customer Service & Returns Allowance
+
+Setting a customer service & returns allowance on a connection automatically applies an adjustment to all new incoming supplier invoices, decreasing the amount the retailer owes the supplier.
+
+This allowance is typically applied to offset the costs of returns and other costs associated with servicing a customer. 
+
+To set a default returns allowance for any new connections automatically, enter a value between 0 and 10% and then click the **Save Preference** button.
+
+### Packing Slip Template
+
+Including a retailer-branded packing slip is often an important component of the customer experience. The default packing slip will include your logo and core order data including the customer order number. 
+
+If you have worked with fabric Support to configure a custom packing slip, please provide the template name and click the **Save Preference** button.
+
+## Currency Settings
+
+Manage the currency of your account. Use the dropdown menu to select a primary currency. This will help Marketplace apply location-specific configurations for things like a product’s cost and price. Supported currencies include United States Dollar, Canadian Dollar, British Pound Sterling, and Euros.
+
+## Notifications
+
+Marketplace supports real-time push notifications so that you can receive supplier onboarding alerts or transaction alerts.
+
+To enable a notification, enter an email address or a distribution list the corresponding field, and then use the toggle menu to set the notification to **Enabled** or **Not Enabled**.
+
+Types of **Onboarding Notifications**:
+
+* Supplier Invite Accepted: Notifications when a supplier partner accepts an invitation to join.
+* Supplier Completed Onboarding: Notifications when a new supplier completes onboarding.
+* Connection Notifications: Real-time alerts related to your connections and connection notes.
+
+Types of **Transaction Notifications**:
+
+* Connection Notifications: Notifications related to your connections and connection notes.
+* Order Received: Notifications when a new order is received.
+* Order Canceled: Notifications when a cancellation request is received.
+* Order Ship To Address Updated: Notifications when a “ship to” address change request is received.
+* Message Received: Notifications when a new message is received on an orders.
+* Return Received: Notifications when a new RMA is created on an order.
+* Return Approved/Rejected: Notifications when an RMAs is approved or rejected.
+
+In addition, **Digest Notifications** allow you to receive daily, aggregated reports on any late purchase orders.
+
+## Branding
+
+Use the Branding menu to upload your business’s logo. It will be displayed to your supplier partners throughout the fabric platform and included on your packing slip.
+
+The ideal logo is a 360x120 pixel PNG.
+
+Click on the **Upload From Device** button to browse files on your computer to upload. Once you’ve selected a file, click and drag the preview to zoom, pan, and crop the image.
+
+When finished, click **Save**.
+
+## Payment Settings (Staff Only)
+
+Connect your bank account to your fabric Marketplace profile for automatic payments through Plaid. Click on the **Open Plaid** button to begin the setup process within Plaid.
+
+## User Management
+
+Invite new users and manage existing ones.
+
+### Creating a new user
+
+To add a user to the account, click on the **Add New User** button. Enter the new user’s first name, last name, and email address, and fabric will send them an email with instructions to activate their user account.
+
+### Editing a user
+
+To edit a user’s account information, find and click on their name on the User Management page.
+
+The **General Settings** section allows you to edit basic profile information that identifies the user across the fabric platform. Use the Status dropdown menu to change the account between Active, Suspended, and Invited. When finished with your changes, click **Update**.
+
+The **Role** section allows you to configure a user’s access level. Click **Add Role** to assign a user a new role. To edit a user’s existing role, click on the role and the Update Role popup will appear. Select a new role for the user in the dropdown menu and click Save Role.
+
+**Security Credentials** allows you to give the user a new temporary password. Use the New Password and Confirm Password fields to create their new password. Upon logging in, the user will be required to change their password.
+
+**Security Info** shows details from the last time the user signed in to fabric.
+
+## API Clients
+
+Manage API keys for your account.
+
+### Adding a new API Client
+
+To add a new client, click on the **Add API Client** button, give the client a name, and click **Create Client**. After the client is created, you will be able to retrieve their credentials.
+
+### Accessing Client Credentials
+
+To access a client’s credentials, find and click on their name on the API Clients page.
+
+The Client Credentials section shows the name you gave the client, their API URL, their Brand ID, and Client ID, along with the Client Secret. To access the client secret, click on **Get Client Secret**. **However, you can only access the client secret once.** When you’re ready, click on the Show API Secret button. The API secret will be shown, along with a copy button so that you can save it. If you need to access the client secret again, please submit a support ticket.
+
+## Integrations
+
+Manage existing integrations associated with your account and add new ones.
+
+Marketplace supports integrations with BigCommerce, fabric, returnly, and Shopify.
+
+### Adding an Integration
+
+Basic setup for integration with third-party platforms consists of clicking on the **Add Integration** button at the top-right of the page. In the Add Integration popup that appears, click the **Add** button next to the platform you’d like to integrate with. From there, integrating with each platform is different, but setup includes information like the API Key, API Secret, or Store URL.
+
+### Integration Options
+
+Existing integrations appear on the Integrations page below the Add Integration button. To manage an existing integration, find and click on its corresponding **Options** menu. The options in the popup that appears are shortcuts to edit settings within the integration.
+
+## Webhooks (Advanced)
+
+Configure webhooks and review webhook history.
+
+## Webhooks
+
+Configure webhooks to listen to key events from the fabric platform. To add a new webhook, click on the **Add Webhook** button.
+
+* Proposal Approved
+* Item Inventory updated
+* Offer Created
+* Order Created
+* Order Closed
+* Shipment Closed
+* Cancel Created
+* Invoice Created
+
+The **Method** dropdown menu allows you to choose between post, put, and patch.
+
+In the **URL** field, enter the webhook URL.
+
+Use the **Status** dropdown menu to choose whether the webhook is Enabled or Disabled.
+
+When finished, click **Add Webhook**.
+
+### Webhook History
+
+Review recent webhook results.
+
+## Retailer SKU Settings
+
+Configure auto-generation of retailer SKUs.
+
+You can turn on automatic SKU assignment if you would like Marketplace to generate unique SKUs for items as soon as they are approved by a member of the retailer team.
+
+The settings configured on this page will be applied to new products only; existing products and items will NOT be modified. 
+
+After making a selection, click the **Save Preference** button. 
+
+### Serial Key
+
+If Retailer SKU Assignment is enabled, you can choose a seed value for your SKUs. Fill out the Prefix, Seed Value, and Net Value fields, and then click **Save Preference**.
+
+## Proposal Departments
+
+Visit the [Proposals](/docs/marketplace-retailers-proposals) page to learn more about Proposal Departments in fabric Marketplace.
+
+### Creating a Proposal Department
+
+To create a new Proposal Department, click the **Create** button at the top-right of the page and fill out the fields in the **Create Department** popup that appears.
+
+* Name: Give the Department a name
+* Product Import Template: select from fabric’s default templates or a template you created
+* Supplier Ruleset: Select the attribute validations that suppliers must meet
+* Retailer Ruleset: Select the attribute validations that you must meet
+* Sample Template URL (optional)
+
+## Attribute Value Transformers
+
+Please see the [Attribute Value Transformers](/docs/marketplace-retailers-attribute-value-transformers) page for more information. 
+
+## Product Rulesets
+
+Please see the [Rulesets](/docs/marketplace-retailers-rulesets) page for more information. 
+
+## Product & Inventory Templates
+
+Please see the [Templates](/docs/marketplace-retailers-templates) page for more information.
+
+## Shipping Accounts
+
+Create and manage Shipping Accounts
+
+### Adding a Shipping Account
+
+To add a new shipping account, click on the **Add Shipping Account** button. In the popup that appears, give shipping account a nickname, use the **Carrier** dropdown menu to select a shipping provider, and then click **Save & Continue**.
+
+## Terms of Service
+
+Review the Terms of Service from fabric Marketplace.
+
+Click on the Commerce Network Merchant Agreement link to open a PDF of the Terms of Service in a popup window.
+
+## Tracking Number History
+
+The Tracking Number History section allows retailers to acknowledge changes in tracking numbers. 
+
+The Tacking History page shows the Shipment ID and old and new tracking numbers, as well as the date the tracking number was changed. 
+
+Click on the **Shipment ID** to see details about the shipment, including the Packing Slip. 
+
+Click the **Acknowledge** button at the right to acknowledge the changes to an order’s tracking number.
+
+## Commission Profiles
+
+Please see the [Categories & Commission Profiles](/v2/docs/categories-commission-profiles) page for more information.
+
+## Categories
+
+Please see the [Categories & Commission Profiles](/v2/docs/categories-commission-profiles) page for more information.

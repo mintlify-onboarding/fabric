@@ -1,0 +1,80 @@
+---
+title: "Rulesets"
+description: "Set the conditions and validations used by the Proposal Department."
+---
+
+> ## ❗️
+> 
+> Marketplace (Merchants) is now called Marketplace (Retailers)
+> 
+> Some of fabric's products are undergoing name changes. Marketplace (Merchants) is now Marketplace (Retailers), but you may see the old name in some places as we make the transition.
+
+## Overview
+
+A ruleset is a set of conditions that can be applied to a proposal through the feature called Proposal Departments. A ruleset consists of multiple rule groups. Each rule group can have multiple rules configured where each rule dictates the conditions for an individual attribute.
+
+* Retailers and suppliers use rulesets to dictate the terms of a proposal department
+* Rules set under a ruleset are applied to all items and attributes during a proposal
+* Proposal compatibility will check all the items from the template and apply the rulesets on them. Only validated items will be added to the proposal
+* Every retailer must have at least 2 rulesets, one to be used as Retailer ruleset and one to be used as suppliers ruleset. Refer to [Proposal Departments](/docs/marketplace-retailers-proposal-departments) for more details.
+
+### Create a Ruleset
+
+To create a ruleset, login to your dashboard, select **Retailer Settings**, then **Product Rulesets,** then **Create Ruleset.**
+
+Enter a **Name** and **Description** of the ruleset.
+
+Click **Create** and the new ruleset will appear in the list.
+
+## [](#section-)
+
+### Create a Rule Group inside the Ruleset
+
+To configure a Rule Group in a Ruleset, click on the **Ruleset Name** you created.
+
+Click on Create inside the **Rule Group** section and complete the dialog box
+
+* **Name** \- Name of the Rule Group. This represents the group to which the attribute belongs. For example, all identifier-related attribute rules can be part of the a single group called Identification.
+* **Position** \- Only an integer is accepted. This will dictate the order of this group on the item details page.
+* **Description** \- An optional description of the Rule Group.
+
+Click **Save**.
+
+A single Ruleset can have any number of Rule Groups.
+
+### Create rule group
+
+### Create a rule inside a Rule Group
+
+To add a rule, click on the relevant **Rule Group**.
+
+Click on **Create** inside the **Rules** section and complete the dialog box
+
+* **Attribute** \- Select an attribute on which you want to apply the rule.  
+   * Note: This list will have the attribute names as defined by fabric Marketplace. Retailers’ own attribute names are not shown here, so be careful when selecting the attribute while creating a rule.
+* **Name** \- Provide a name for the rule.
+* **Position** \- Set the priority of the rule. This will dictate the order in which this attribute should appear on the Item details page.
+* **Description** \- an optional field to add a description to the rule.
+* **Is Required** \- Determines if the attribute must be included to pass the compatibility with this Ruleset.
+
+Click **Save**.
+
+A single Rule Group can have any number of rules.
+
+### Create rule
+
+### Adding validators to a rule (optional)
+
+A validator Enables retailers to set more complex validations on their attributes.
+
+Once a rule is added, validators can be added to it.
+
+* Multiple validators are available to be added, however, only one validator can be added per rule.
+
+To add a validator, click **Add** next to the rule inside the list.
+
+Select the validation **Type** from the dropdown menu.
+
+Enter the relevant expression in **Value.**
+
+Click **Save.**

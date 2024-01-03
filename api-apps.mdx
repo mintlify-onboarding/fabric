@@ -1,0 +1,36 @@
+---
+title: "API Apps"
+---
+
+### Overview
+
+API apps allow multiple software programs to exchange data and make it easier for developers to create applications that leverage external resources and capabilities.
+
+fabric authenticates and authorizes API requests using your account’s API keys. When using any of fabric’s APIs through an API client, you must include an API key as part of the requests. These keys are used to validate the permissions and access rights associated with the client before allowing access to a specific merchant's data. 
+
+Copilot has two types of API apps:
+
+* System App: Generates an access token using a client ID and client secret to identify itself and to communicate with other systems. System Apps do not use fabric Identity to authenticate end users, instead use system-to-system communications with fabric APIs. If you want to use your own identity provider, you must create a System App.
+* User App: Uses fabric Identity to authenticate end users. A user app relies on the login page that fabric Identity hosts for end users to log in. User apps are used by e-commerce apps that use fabric Identity for their authentication and authorization.
+
+For more information about user apps and system apps, see the [APP Types](/reference/identity-developer-guide-concepts#app-types) section.
+
+### Terminologies
+
+The following terminologies are used when creating or managing fabric API apps:
+
+* **App Name:** The name of the app.
+* **Role:** The scope of permissions for the app.
+* **User Pool:** The user directory where user credentials are stored.
+* **Redirect URL:** The URL the user should be redirected to after successful authentication.
+* **Logout URL:** The URL the user should be redirected to after logout.
+* **Authorization URL:** The URL to which the user will provide their client id and client secret to. If authorization is successful, then the user will be redirected to their redirect URL with an access token.
+* **Client ID:** Public identifier of an app.
+* **Client Secret:** The Secret known only to your application and the authorization server used to authenticate the app.
+
+### Related Topics
+
+* [Creating a System App](/docs/creating-system-app)
+* [Creating a User App](/docs/creating-user-app)
+* [Managing API Apps](/docs/managing-api-apps)
+* [Concepts Page](/reference/identity-developer-guide-concepts)

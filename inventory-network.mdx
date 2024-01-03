@@ -1,0 +1,64 @@
+---
+title: "Networks"
+description: "Create rules to define inventory availability"
+---
+
+## Introduction
+
+A network is a group of locations that share inventory. By defining a network code, storefronts can use network codes to get inventory.
+
+The Network page shows a list of all networks you have created previously with an Add Network button at the top-right. You can edit a previously created network by hovering over its name in the list and clicking the pencil icon at the right.
+
+### Types of Networks
+
+There are two types of networks: a **Single Network** or **Multiple Networks**.
+
+**Single Network** is used to define inventory availability rules that apply to items and locations.
+
+**Multiple Networks** is used to group Single Networks together. A possible use case for Multiple Networks could be to set up different types of locations within your retail system, e.g. stores, warehouses, outlets, etc. In order to set up the Multiple Networks option, you must have created at least two Single Networks previously.
+
+## Creating a Network
+
+Click the **Create Network** button at the top-right to create a new network.
+
+**Step 1: Add Basic Information**
+
+Fill out the Network Name and add a Description (optional).
+
+Use the **Select Type of Network** field to choose whether you would like to create a Single Network or Multiple Networks.
+
+Follow the steps below that correspond to the type of network you’re creating to complete the process.
+
+#### Single Network
+
+**Step 2: Set Up Your Rules**
+
+Use the **Attribute Type** drop-down to select whether the rule applies to a **Product** or a **Location**.
+
+The options in the **Attribute Name** drop-down menu depend on whether you selected Product or Location in the Attribute Type drop-down menu. If you selected **Product**, you can choose between the default option “isActive” or any custom attribute you may have created in [OMS Settings](/docs/orders-settings). If you select **Location**, you can choose between the two default options, “isActive” and “isBopis,” or any custom attributes you may have created in OMS Settings.
+
+Use the **Contains** drop-down menu to choose whether the rule applies to items that contain, do not contain, or are equal to the value you enter in the Add Value field.
+
+Enter a value into the **Add Value** field. The field accepts any alphanumeric character.
+
+Once you have set up the rule, click the **Add Rule Group** button. You can create multiple rule groups that apply to the same Attribute Type or Attribute Name.
+
+**Step 3: Add inventory availability**
+
+Enter a number of units in the **Safety stock quantity** field. The number set in this field will be subtracted from the available to promise quantity. The network safety stock also aggregates the safety stock for every location in the network. Therefore the actual safety stock will be this number plus the location aggregated safety stock.
+
+Enter a number of units in the **Define low stock level** field.
+
+Click the **Create** button at the top-right of the page to save your network, or click **Cancel** to exit without saving changes.
+
+#### Multiple Networks
+
+**Step 2: Set Up Your Multiple Networks**
+
+Use the **Single Network** dropdown to select one of the Single Networks you have created previously to be a part of this Multiple Networks group and then click **Add**.
+
+After you have added a Single Network, it will appear below the Single Network dropdown, along with its Safety Stock and Low Stock numbers, as well as the date it was Last Updated. Hover over a Single Network you have added and click on the trash can icon that appears at the right to remove it.
+
+You must add at least two Single Networks to create a Multiple Networks group.
+
+Click the **Create** button at the top-right of the page to save your network, or click **Cancel** to exit without saving changes.

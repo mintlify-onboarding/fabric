@@ -1,0 +1,40 @@
+---
+title: "Category Attributes Overview"
+---
+
+### Overview
+
+Category attributes define specific characteristics of a category, describing items within it. Using categories, merchants can organize products into a tree structure of subcategories, with each item belonging to a category or subcategory. Attributes added to higher-level categories are inherited by subcategories, ensuring consistency in organizing product information.
+
+These attributes support SEO and merchandising by acting as tags for different product categories and facilitating the creation of landing pages for various product types. In terms of SEO, category attributes serve to "tag" various product categories. Additionally, merchants can leverage category attributes to facilitate the creation of landing pages for different product types.
+
+### Attribute Types
+
+fabric supports the following attribute types for storing category information:
+
+* **Text:** A sequence of characters. You may store any combination of text, numbers, or special characters. Text attribute has three subtypes:  
+   * Small text: For single-line text attributes.  
+   * Text Area: For multi-line text attributes.  
+   * Html: For text area attributes that support HTML.
+* **Number Only:** An attribute type for values that are always a number.
+* **Date:** All date-related formats. Bulk import of the date attribute uses the date format selected when the attribute was created. Once selected, the date format cannot be changed. If the format needs to be changed, you must delete the attribute and create it again using the required format.
+* **Boolean:** A Boolean value (true/false) for a category attribute. While importing attributes from an external system, make sure the true or false values are specified for all Boolean attribute types.
+
+For each attribute type, certain fields are optional, while others are required. Failure to provide required fields will result in an "Unable to create attribute" error message.
+
+The following table shows the attribute types and their properties. This will help you determine the mandatory and optional properties of an attribute type. To ensure data quality, set up one or more validations based on the selected attribute type.
+
+| Attribute Type | Localize this attribute | Attribute title | Description | Use JavaScript to calculate value | Validations | Is this attribute mandatory? | Type of text | Date Format | Decimal  |
+| -------------- | ----------------------- | --------------- | ----------- | --------------------------------- | ----------- | ---------------------------- | ------------ | ----------- | -------- |
+| Text           | Optional                | Required        | Optional    | Optional                          | Optional    | Required                     | Required     | N/A         | N/A      |
+| Number Only    | Optional                | Required        | Optional    | Optional                          | Optional    | Required                     | N/A          | N/A         | Optional |
+| Date           | Optional                | Required        | Optional    | Optional                          | Optional    | Required                     | N/A          | Required    | N/A      |
+| Boolean        | Optional                | Required        | Optional    | Optional                          | Optional    | Required                     | N/A          | N/A         | N/A      |
+
+### Related Topics
+
+* [Adding a Text Attribute](/docs/products-adding-text-attribute-category)
+* [Adding a Number Only Attribute](/docs/products-adding-number-only-attribute-category)
+* [Adding a Date Attribute](/docs/products-adding-date-attribute-category)
+* [Adding a Boolean Attribute](/docs/products-adding-boolean-attribute-category)
+* [Managing Category Attribute](/docs/products-managing-category-attributes)

@@ -1,0 +1,83 @@
+---
+title: "Importing Bundles"
+---
+
+### Overview
+
+Bundles are two or more items sold together. Creating a bundle allows you to group items that are exclusively sold together or group items that can be purchased together and separately.
+
+This document covers the process of adding multiple bundles via CSV import. You can also [add a single bundle](/docs/products-adding-bundle).
+
+### CSV File Guidelines
+
+You can import bundles using CSV files only; no other data or file formats are supported. Here are the key points to consider:
+
+* Formulas in formula-driven attributes are executed automatically after bundles have been imported.
+* If the CSV file does not have an attribute that is added to the category, you can add a new column in the CSV with the attribute name in the header. The upload process will populate the value for this attribute. Note that empty rows and columns are ignored.
+* Each bundle should include a category node. If the category node is missing, the bundle will not be created.
+* Use the **\->** delimiter for category nodes. Incorrect mapping or absence of category nodes may result in bundle creation issues.
+* The headers, represented in the first row of the CSV file, should match the attributes of the bundle. While attribute titles are not case-sensitive, maintaining case consistency with the original attribute titles is recommended.
+* When updating or upserting bundles, entering "NULL" in a spreadsheet cell will override existing values with blank values.
+
+We recommend that you download the template file to use as a guide when creating your own CSV file for import to minimize errors during the import process.
+
+#### Attribute Data Format
+
+When preparing your CSV file for import, ensure that the attribute data format aligns with attribute type requirements. Different attribute types have specific formatting criteria:
+
+* **Text:** Ensure the data is in text string format.
+* **Number:** Only numerical data is imported; other data is ignored.
+* **Boolean:** Use "TRUE" or "FALSE" only; other values will be ignored.
+* **Date:** Format dates exactly as during attribute creation.
+* **List of values:** Values must be an exact match to one of the list values.
+* **Serial:** Leave this field blank.
+* **SKU:** Must be provided for the bundle to be created.
+
+The status attribute is imported as live only when all mandatory attributes are provided for the bundle. Otherwise, the status is automatically updated to draft, regardless of the value you provide in the file.
+
+### Prerequisites
+
+Before initiating the bundle import, ensure that:
+
+* You have set up at least one product attribute group. For more information about creating categories, see the [Categories section](/docs/products-categories-adding-category).
+* You have created at least one leaf category to add the bundle to. For more information about creating categories, see the [Categories section](/docs/products-categories-adding-category).
+* The CSV file adheres to the guidelines.
+
+### Procedure
+
+1. In the left menu, click **Products > List > Bundles**.  
+The **Bundles** page is displayed.
+2. Click **Import**.  
+The **Select a leaf category** window is displayed.
+3. Select a **Leaf**.  
+The root categories and leaf categories appear as they are set up in Categories. Depending on your configuration, you may have to select one or more root categories before selecting a leaf category.
+4. Click **Next**.  
+The **Import CSV file** window is displayed. This window provides a link to download an example template for the CSV file.
+5. To import a CSV file, do one of the following options:  
+   * Drag and drop the CSV file into the window.  
+   * Click **Select a File from your computer**.
+
+6.Click **Import file**.
+
+The CSV file is imported, and the bundles are added to your product list.
+
+fabric stores the CSV files you upload to your account. You can view the status of the import and re-download the original files by visiting the [Import History](/docs/products-viewing-bundle-import-history) page.
+
+### Troubleshooting
+
+Refer to the following table for a list of common errors when importing and how to correct them.
+
+| **Error Message**                            | **What it means?**                                                                                                                                                                                                                            | **What happens to the bundle?**                                                                                                             | **How to resolve?**                                                                                                         | **Comment**                                                                                                                     |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Category Node not found                      | The category node name is incorrect or missing.                                                                                                                                                                                               | A bundle can’t be created without a proper category node given.                                                                             | Verify the name of the node and the delimiter.                                                                              |                                                                                                                                 |
+| Internal Server Error                        | Server issues                                                                                                                                                                                                                                 | The bundle is not created or updated                                                                                                        | Try again                                                                                                                   | This is an intermittent issue.                                                                                                  |
+| Attribute Name not found                     | The attribute mentioned in the CSV header is not added to the category. The attribute name must be an exact match.                                                                                                                            | The bundle is created, but this specific attribute will be ignored.                                                                         | Check the name of the attribute and ensure that the attribute is added to the category you are trying to import bundles to. |                                                                                                                                 |
+| Attribute Name value is invalid              | The value provided has some flaws or validation issues.                                                                                                                                                                                       | The attribute value will not be saved to the bundle.                                                                                        | Provide the correct attribute value.                                                                                        | Example: If you add text for a number type attribute, you will receive this error.                                              |
+| Status Mandatory attributes required         | In order to set the status of a bundle to live, all mandatory attributes are required.                                                                                                                                                        | The bundle will be created and the attributes will be updated. However, the bundle cannot be set to live; its status will default to draft. | Ensure that all mandatory attributes have a value in the CSV you are trying to import.                                      | When doing a delta import, it is required to have all mandatory attributes and values added to set the bundle's status to live. |
+| Some mandatory attribute values are missing. | There are some mandatory attributes that don't have values in the CSV file that was uploaded. These are either global mandatory, which are set at the attribute level, or category mandatory, which are set at the individual category level. | The bundle is created with errors. Only the values in the CSV will be added.                                                                | Include values for all mandatory attributes.                                                                                | Bundles can be created with errors, but they can’t be set to live unless all mandatory attributes have a value.                 |
+
+### Related Topics
+
+* [Adding a Bundle](/docs/products-adding-bundle)
+* [Viewing Bundle Import History](/docs/products-viewing-bundle-import-history)
+* [Editing a Bundle](/docs/editing-a-bundle)

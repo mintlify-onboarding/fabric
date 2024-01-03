@@ -1,0 +1,90 @@
+---
+title: "Importing Items"
+---
+
+### Overview
+
+Items, which are also referred to as products, are services or stand-alone items sold individually. This document covers the process of importing multiple items using a CSV file. You can also [add items individually](/docs/products-adding-item). 
+
+### CSV File Guidelines
+
+You can import products using CSV files only; no other data or file formats are supported. Here are the key points to consider:
+
+* Formulas in formula-driven attributes are executed automatically after items have been imported.
+* If the CSV file does not have an attribute that is added to the category, you can add a new column in the CSV with the attribute name in the header. The upload process will populate the value for this attribute. Note that empty rows and columns are ignored.
+* Each item should include a category node. If the category node is missing, the item will not be created.
+* Use the **\->** delimiter for category nodes. Incorrect mapping or absence of category nodes may result in item creation issues.
+* The headers, represented in the first row of the CSV file, should match the attributes of the item. While attribute titles are not case-sensitive, maintaining case consistency with the original attribute titles is recommended.
+* Child or variant items can be detached from the parent item when importing. By entering “detach” in the Parent SKU field, the parent/child relationship is removed and the child or variant item becomes a standalone SKU.
+* The Target field supports bulk editing of item statuses to either live or draft.  
+   * Entering **Live** in the target field:  
+         * Updates existing live items  
+         * Publishes existing draft items  
+   * Entering **Draft** in the target field:  
+         * Updates existing draft items  
+         * Unpublishes existing live items  
+         * If both a live and draft version of the item exist, the live version is unpublished and the draft version is discarded
+* When updating or upserting items, entering "NULL" in a spreadsheet cell will override existing values with blank values.
+
+We recommend that you download the template file to use as a guide when creating your own CSV file for import to minimize errors during the import process.
+
+#### Attribute Data Format
+
+When preparing your CSV file for import, ensure that the attribute data format aligns with attribute type requirements. Different attribute types have specific formatting criteria:
+
+* **Text:** Ensure the data is in text string format.
+* **Number:** Only numerical data is imported; other data is ignored.
+* **Boolean:** Use "TRUE" or "FALSE" only; other values will be ignored.
+* **Date:** Format dates exactly as during attribute creation.
+* **List of values:** Values must be an exact match to one of the list values.
+* **Serial:** Leave this field blank.
+* **SKU:** Must be provided for the items to be created.
+
+The status attribute is imported as live only when all mandatory attributes are provided for the item. Otherwise, the status is automatically updated to draft, regardless of the value you provide in the file.
+
+### Prerequisites
+
+Before initiating the item import, ensure that:
+
+* Ensure that you have set up at least one product attribute group. For more information about creating attribute groups, see [Creating Attribute Groups](/docs/products-settings-creating-attribute-groups).
+* Ensure that you have created at least one leaf category to add the item to. For more information about creating categories, see the [Categories section](/docs/products-categories-adding-category).
+* The CSV file adheres to the guidelines.
+
+### Procedure
+
+1. In the left menu, click **Products > List > Items**.  
+The **Items** page is displayed.
+2. Click **Import**.  
+The **Select a leaf category** window is displayed.
+3. Select a **Leaf**.  
+The root categories and leaf categories appear as they are set up in Categories. Depending on your configuration, you might have to select one or more root categories before selecting a leaf category.
+4. Click **Next**.  
+The **Import CSV file** window is displayed. This window provides a link to download an example template for the CSV file.
+5. To import a CSV file, do one of the following options:  
+   * Drag and drop the CSV file into the window.  
+   * Click **Select a File from your computer**.
+6. Click **Import file**.
+
+The CSV file is imported and the items are added to your product list.
+
+fabric stores the CSV files you upload to your account. You can view the status of the import and re-download the original files by visiting the [Import History](/docs/products-viewing-import-history) page.
+
+### Troubleshooting
+
+Refer to the following table for a list of common errors when importing and how to correct them.
+
+| **Error Message**                            | **What it means?**                                                                                                                                                                                                                            | **What happens to the item?**                                                                                                           | **How to resolve?**                                                                                                       | **Comment**                                                                                                                   |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Category Node not found                      | The category node name is incorrect or missing.                                                                                                                                                                                               | An item can’t be created without a proper category node given.                                                                          | Verify the name of the node and the delimiter.                                                                            |                                                                                                                               |
+| Internal Server Error                        | Server issues                                                                                                                                                                                                                                 | The item is not created or updated                                                                                                      | Try again                                                                                                                 | This is an intermittent issue.                                                                                                |
+| Attribute Name not found                     | The attribute mentioned in the CSV header is not added to the category. The attribute name must be an exact match.                                                                                                                            | The item is created, but this specific attribute will be ignored.                                                                       | Check the name of the attribute and ensure that the attribute is added to the category you are trying to import items to. |                                                                                                                               |
+| Attribute Name value is invalid              | The value provided has some flaws or validation issues.                                                                                                                                                                                       | The attribute value will not be saved to the item.                                                                                      | Provide the correct attribute value.                                                                                      | Example: If you add text for a number type attribute, you will receive this error.                                            |
+| Status Mandatory attributes required         | In order to set the status of an item to live, all mandatory attributes are required.                                                                                                                                                         | The item will be created and the attributes will be updated. However, the item cannot be set to live; its status will default to draft. | Ensure that all mandatory attributes have a value in the CSV you are trying to import.                                    | When doing a delta import, it is required to have all mandatory attributes and values added to set the item's status to live. |
+| Some mandatory attribute values are missing. | There are some mandatory attributes that don't have values in the CSV file that was uploaded. These are either global mandatory, which are set at the attribute level, or category mandatory, which are set at the individual category level. | The item is created with errors. Only the values in the CSV will be added.                                                              | Include values for all mandatory attributes.                                                                              | Items can be created with errors, but they can’t be set to live unless all mandatory attributes have a value.                 |
+
+### Related Topics
+
+* [Adding an Item](/docs/products-adding-item)
+* [Viewing Import History](/docs/products-viewing-import-history)
+* [Editing an Item](/docs/products-editing-item)
+* [Adding Item Variants](/docs/products-adding-item-variants)

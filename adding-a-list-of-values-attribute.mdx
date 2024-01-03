@@ -1,0 +1,61 @@
+---
+title: "Adding a List of Values Attribute"
+---
+
+### Overview
+
+List of values attributes allow you to create dropdown menus with defined values across the product list. There are two types of list of values attributes:
+
+* **Single select**: Specifies that the end user can select one option in the list of values.
+* **Multiple select**: Specifies that the end user can make multiple selections from the list of values.
+
+### Prerequisites
+
+Ensure you have administrator privileges to fabric Products. For more information, see [Role-Based Access Control](/docs/role-based-access-control).
+
+### Procedure
+
+1. In the left menu, click **Products > Attributes > Product**.  
+The Product Attributes page is displayed.
+2. Click **New Attribute**.  
+The Create product attribute page is displayed.
+3. Select **List of values**.
+4. (Optional) To enable localization for the attribute, set the **Localize this attribute** toggle to one of the following:  
+   * **On**: The attribute title is localized. The **Title and description** and **Business validations** sections display additional fields corresponding to the languages depending on the internationalization settings.  
+   * **Off**: The attribute title isn't localized.
+5. In the **Attribute title (primary)** field, enter a name for the attribute.  
+If localization is enabled in step 4, enter the localized attribute titles in the Attribute title field for each corresponding internationalization setting.
+6. (Optional) In the **Description** field, enter a description for the attribute.
+7. In the **Type of list** field, select one of the following:  
+   * **Single select**: Specifies that the end user can select one option in the list of values.  
+   * **Multiple select**: Specifies that the end user can make multiple selections from the list of values.
+8. In the **Enter values** field, enter each value in the list, separated by a comma.  
+If localization is enabled in step 4, enter the localized values for each corresponding internationalization setting.
+9. In the **Use JavaScript formula to calculate value** field, select one of the following:  
+   * **Yes**: Specifies that the value for the attribute is calculated using the JavaScript formula that you provide in the **Calculation formula** field. An example of a JavaScript formula is (async () => await attribute('id') \* 10)(). When you select **Yes**, the **Calculation formula** and **Allow manual overwrite fields** are displayed. Do the following to complete the settings:  
+         * In the **Calculation formula** field, enter a JavaScript formula.  
+         * In the **Allow manual overwrite** field, choose one of the following:  
+                  * **Yes**: Specifies that you can manually overwrite the attribute value. When the **Use JavaScript formula to calculate value** setting is enabled, the system determines the value based on your provided formula. However, if you enable the manual overwrite option, you can replace the system-calculated value with a custom value during product attribute setup. For more information, see the [Adding an Item](/docs/products-adding-item) section.  
+                  * **No**: Specifies that you cannot manually overwrite the attribute value. This is the default setting.  
+   * **No**: Specifies that the attribute value is not calculated using a JavaScript formula.
+10. In the Validations field, select one of the following:  
+   * **None**: Specifies that no custom validation is required for the attribute. This is the default setting.  
+   * **Custom JavaScript**: Specifies that the JavaScript you enter in the **Validation formula** field is used to validate the attribute. The **Validation formula** field is displayed.  
+   * In the **Validation formula** field, enter a JavaScript validation formula.
+11. In the **Is this attribute mandatory?** field, select one of the following:  
+   * **Yes**: Specifies that the attribute is mandatory when creating an item.  
+   * **No**: Specifies that the attribute is not mandatory when creating an item. This is the default selection.
+12. Click **Save**.
+
+The list of values attribute with the specified settings is created.
+
+### Related Topics
+
+* [Product Attributes Overview](/docs/product-attributes-overview)
+* [Adding a Text Attribute](/docs/products-adding-text-attribute)
+* [Adding a Number Only Attribute](/docs/products-adding-number-attribute)
+* [Adding a Date Attribute](/docs/products-adding-date-attribute)
+* [Adding a Boolean Attribute](/docs/products-adding-boolean-attribute)
+* [Adding a Serial Attribute](/docs/products-adding-serial-attribute)
+* [Importing Product Attributes](/docs/products-importing-product-attributes)
+* [Managing Product Attributes](/docs/products-managing-product-attributes)

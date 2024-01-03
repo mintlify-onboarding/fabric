@@ -1,0 +1,84 @@
+---
+title: "Product Attributes Overview"
+---
+
+### Overview
+
+Item attributes are used to define product characteristics. For example, a product name, an identity number, and a product description are all common attributes of a product. 
+
+Attributes are key-value pairs, such as _Color: red_, that hold information for each property of the product. ‌
+
+### Attribute Types
+
+fabric supports the following types of attributes for storing product information:
+
+* **Text:** A sequence of characters. You may store any combination of text, numbers, or special characters. Text attribute has three subtypes:  
+   * Small text: For single-line text attributes.  
+   * Text Area: For multi-line text attributes.  
+   * Html: For text area attributes that support HTML.
+* **Number Only:** An attribute type for values that are always a number.
+* **Date:** All date-related formats. Bulk import of the date attribute uses the date format selected when the attribute was created. Once selected, the date format cannot be changed. If the format needs to be changed, you must delete the attribute and create it again using the required format.
+* **Boolean:** A Boolean value (true/false) for a product attribute. While importing attributes from an external system, make sure the true or false values are specified for all Boolean attribute types.
+* **List of Values:** A dropdown menu for product attributes that have defined values across the product list. Supports single selection or multiple selection from the dropdown.
+* **Serial:** An auto-increment number-type attribute. You can specify the starting number and what the increment is.
+
+The following table shows the attribute types and their properties. This will help you determine the mandatory and optional properties of an attribute type. To ensure data quality, set up one or more validations based on the selected attribute type.
+
+| **Attributes**                    | **Text** | **Number Only** | **Date** | **Boolean** | **List of Values** | **Serial** |
+| --------------------------------- | -------- | --------------- | -------- | ----------- | ------------------ | ---------- |
+| Localize this attribute           | Optional | Optional        | Optional | Optional    | Optional           | Optional   |
+| Attribute title                   | Required | Required        | Required | Required    | Required           | Required   |
+| Description                       | Optional | Optional        | Optional | Optional    | Optional           | Optional   |
+| Use JavaScript to calculate value | Optional | Optional        | Optional | Optional    | Optional           | N/A        |
+| Validations                       | Optional | Optional        | Optional | Optional    | Optional           | N/A        |
+| Is this attribute mandatory?      | Required | Required        | Required | Required    | Required           | Required   |
+| Type of text                      | Required | N/A             | N/A      | N/A         | N/A                | N/A        |
+| Date Format                       | N/A      | N/A             | Required | N/A         | N/A                | N/A        |
+| Decimal                           | N/A      | Optional        | N/A      | N/A         | N/A                | N/A        |
+| Type of list                      | N/A      | N/A             | N/A      | N/A         | Required           | N/A        |
+
+### Calculation Formulas
+
+Businesses often require dynamically calculated attributes based on existing values. For example:
+
+1. You can configure a product's display name to be _Product Name_ \+ _by_ \+ _Brand Name_, Instead of naming each product or variant individually. This formula automatically creates names for the products.
+2. The area of a rug can be calculated by multiplying width with length and the price per square foot can be calculated by dividing the price attribute value by the area attribute value.
+3. You can calculate weight per count by dividing the weight of the product by the total count of items inside the box.
+
+With low-code JavaScript formulas, these attribute values can be calculated automatically. Here are some frequently used formulas:
+
+| Operation   | Calculation Formula                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------ |
+| Divide      | (async ()=> await attribute('attribute 1 ID') / await attribute('volume'))()                           |
+| Multiply    | (async ()=> await attribute('attribute ID') \* 10)()                                                   |
+| Sum         | (async ()=> await attribute('attribute 1 ID') + await attribute('attribute 2 ID'))()                   |
+| Subtract    | (async ()=> await attribute('attribute 1 ID') - await attribute('attribute 2 ID'))()                   |
+| Concatenate | (async ()=> await attribute('attribute 1 ID') + " followed by " + await attribute('attribute 2 ID'))() |
+
+Note that the values in double quotes (" ") represent the title of the reference attribute and refer to the absolute value of the attribute being used for calculation.
+
+### Validation Formulas
+
+you can specify business validations on attributes using a low-code JavaScript formula and ensure data integrity and quality. This operation does not manipulate data, only validates fields for the attributes.
+
+| Validation Type                              | Validation Formula                                                                             |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Number Validation                            | (async ()=> await attribute() >=0 && await attribute() <=20 && await attribute()%0.25 === 0)() |
+| String Validation                            | (async ()=> (await attribute()).length < 200)()                                                |
+| Date (Greater than Equal to current Date)    | (async ()=> await attribute() >= new Date())()                                                 |
+| Date (Greater than Equal to particular Date) | (async ()=> await attribute() >= new Date('02/14/2021'))()                                     |
+
+Formulas are based on JavaScript syntax, so you can use all inbuilt JavaScript functions.
+
+For example, values given as a string can be stored as integers by using formulas such as (async () => parseFloat(await attribute('Height (in)')) - parseFloat(await attribute('Weight (in)')) )().
+
+### Related Topics
+
+* [Adding a Text Attribute](/docs/products-adding-text-attribute)
+* [Adding a Number Only Attribute](/docs/products-adding-number-attribute)
+* [Adding a Date Attribute](/docs/products-adding-date-attribute)
+* [Adding a Boolean Attribute](/docs/products-adding-boolean-attribute)
+* [Adding a List of Values Attribute](/docs/adding-a-list-of-values-attribute)
+* [Adding a Serial Attribute](/docs/products-adding-serial-attribute)
+* [Importing Product Attributes](/docs/products-importing-product-attributes)
+* [Managing Product Attributes](/docs/products-managing-product-attributes)

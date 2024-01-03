@@ -1,0 +1,180 @@
+---
+title: "Shopper Experience Quickstart Guide"
+description: "This guide introduces developers to the fabric Commerce Platform (fCP) suite of APIs. These APIs enable the implementation of common shopper experiences, including Product Listing Pages (PLP), Product Detail Pages (PDP), Add to Cart, and Checkout."
+---
+
+## Introduction
+
+With step-by-step instructions, this guide will assist you in integrating these APIs into your e-commerce portal (website or mobile app) to create seamless shopping experiences for your customers.
+
+Once you have read this guide, we recommend checking out our [Merchant Experience Quickstart Guide](/docs/merchant-experience-quickstart-guide) to set up important merchant configurations such as products, inventory, promotions, and more.
+
+## Target Audience
+
+This guide is designed for developers who are involved in implementing a merchant's storefront.
+
+## Glossary
+
+* **fCP**: fabric Commerce Platform (fCP) offers a range of features to effectively manage various aspects of your storefront, including merchandising, pricing, promotions, inventory, order processing, and shopper data. For your business operations, you can interact with fCP via our administration interface called [Copilot](https://live.copilot.fabric.inc/).
+* **Copilot**: Acting as the central administration hub for fabric, Copilot offers a suite of services that empower you to directly manage your digital commerce requirements, minimizing reliance on technical development resources.
+* **CTA**: A call-to-action (CTA) encourages shoppers to take action so that they move closer to conversion. For instance, “Add to Cart” is a typical CTA button that appears on an e-commerce portal, encouraging shoppers to add a product to their cart and move one step closer to checkout.
+* **Attributes**: They are descriptors for assets or entities such as products, categories, and collections. Custom attributes extend the meaning of an asset beyond what you can define with standard attributes like name, description, etc.
+* **SKU**: Stock Keeping Unit (SKU) is a unique identifier for each item that can be purchased or sold. Each variant of a product will also have a unique SKU to differentiate it from other variations of the same product.
+* **Product variants**: Variations of a product are referred to as “variants.” For example, a laptop that comes in three different sizes (13”, 15”, 17”) and four different colors (red, blue, grey, and white) has 12 variants.
+* **Tenant**: A customer or organization that uses fabric to manage and sell their products or services, typically through multiple channels.
+
+## Prerequisites
+
+* **Base URL**: All v3 APIs use this as base URL - `https://api.fabric.inc/v3/`.
+* **Bearer authentication**: All v3 APIs use bearer authentication. To generate a bearer token, refer to our [Authentication APIs](/reference/authentication-endpoints) documentation.
+* **x-fabric-tenant-id**: All v3 APIs accept a custom request header called `x-fabric-tenant-id` to identify the tenant from which you would like to get the information.
+* **x-fabric-channel-id**: All v3 APIs accept a custom request header called `x-fabric-channel-id` to identify the channel within a tenant from which you would like to get the information. A "channel" refers to a specific platform or marketplace used to sell products, such as an online store, social media platform, or third-party marketplace. For example, you may have a custom channel `YOUR_COMPANY_US` that represents your US market and `YOUR_COMPANY_CA` that represents your Canadian market.
+
+## Product Listing Page (PLP)
+
+A product listing page (PLP) is a webpage on your e-commerce website that displays products, either based on a category or a search query. A well-optimized PLP page enhances product discovery, facilitates informed decision-making, and provides a smooth experience, all of which contribute to improved conversion rates.
+
+![An example PLP](/images/example-PLP.png)
+
+### fabric Search via Algolia
+
+fabric uses Algolia, a prominent search provider renowned for its advanced search capabilities in e-commerce storefronts, to power the Search functionality. fabric provides an indexing process that updates Products, Inventory, and Offers multiple times per day, automatically feeding them into an Algolia instance managed by fabric on behalf of the merchant. For optimal and swift shopper experiences, we recommend that storefronts establish a direct connection with Algolia to populate a Product Listing Page (PLP). Your fabric customer success representative will supply you with your Algolia customer index and the key to get you started.  
+To configure Algolia to suit your requirements, refer to our [Quick Start guide for the Merchant experience](/docs/merchant-experience-quickstart-guide#configure-search).
+
+### Getting Started
+
+Algolia offers built-in integrations with numerous well-known frameworks, tools, and platforms. Before using Algolia, we recommend you familiarize yourself with the [Search API](https://www.algolia.com/doc/rest-api/search/) documentation.
+
+In addition, Algolia’s [Faceting API](https://www.algolia.com/doc/guides/managing-results/refine-results/faceting/) can be advantageous when implementing facets. They are a collection of filterable categories enabling shoppers to refine search results based on multiple categories, concurrently. For instance, for a luxury store, the facets could include brand or designer.
+
+## Product Details Page (PDP)
+
+A Product Details Page (PDP) is a web page that provides detailed information about a specific product, often including images, specifications, and pricing.
+
+**NOTE**: There are two methods to get Product Detail Page (PDP): Using Algolia Search Index or making requests to the endpoints provided below. The Algolia Search Index yields rapid results, but the information may be outdated if re-indexing hasn't been performed. On the other hand, the endpoints offer more current information, but with slightly increased latency.
+
+### Get Product Details
+
+Refer to the documentation for [Get published product by SKU](/reference/get%5Fpublished-products-skus-sku) or [Get products by IDs](/reference/get%5Fpublished-products-ids) for additional details of these endpoints.
+
+You must parse the JSON response to extract the information you need, such as the product name, description, images, and other attributes.
+
+**NOTE**: Our Products offering does not have any standard or out-of-the-box attributes such as "title" or "description." Your organization must customize all attributes, so you need to know which attribute you want to pull into a specific part of the PDP.
+
+Here is a sample PDP:
+
+![Image, variant information, overview, and description can all be set in product attributes](/images/example-product-attributes.png)
+
+For additional information on variants, refer to [Get variants of published products by SKU](/reference/get%5Fpublished-products-skus-sku-variants)
+
+### Get Price by SKU or Item ID
+
+Below is an example of where the product details can be displayed on PDP:
+
+![](/images/example-pdp-price.png)  
+Refer to [Get prices by product SKUs](/reference/evaluatepricesbysku) or [Get prices by item IDs](/reference/getpricesbyproductid) for additional information on these endpoints.
+
+### Get Product Inventory
+
+You must ascertain the availability of the product to be able to decide whether to display the "Add to Cart" call-to-action or a "Sold out - Notify when back in stock" notification on the Product Detail Page (PDP).
+
+Refer to [Search for inventories](/reference/searchinventories) for additional information.
+
+**NOTE**: You can specify the following filters in the request body: sku, locationNumber, and itemId. Here is a use case to demonstrate the importance of filtering by proximity. inventory of a product within a specific zip code. For instance, let's say you are searching for a particular pair of trousers from a store in your area. If there is only one available within a 5-mile radius of your specified zip code, but ten available within a 20-mile radius. This use case demonstrates the importance of filtering by proximity.
+
+## Add to Cart
+
+The "Add to Cart" CTA plays a crucial role in boosting conversions as it empowers shoppers to indicate their purchase intent and seamlessly proceed to checkout at their convenience. It also offers them the convenience and flexibility to continue browsing without the risk of losing their selected products since the cart acts as a centralized location where they can review their chosen items.
+
+In this section, we present a basic workflow for the "Add to Cart" feature, including common scenarios such as creating a cart, adding line items, and merging carts for guest users. This workflow is designed as a foundation and can be tailored to meet your specific requirements.
+
+Refer to [Cart](/reference/cart-getting-started) to review the full capabilities of the fabric Cart and how we support your specific requirements.
+
+### Create a Cart
+
+We recommend you create a cart early in the customer’s journey. This helps reduce the shoppers' perceived time it takes for your storefront to load their cart (in other words, latency). Once the cart is created, use the cart ID to update the cart as the shopper navigates through your storefront.
+
+**NOTE**: You can create a cart for a guest shopper or a logged-in shopper.
+
+For additional information on cart creation refer to [Create a cart](/reference/createcart). However, here are the key points to remember:
+
+* To create a new cart, make a POST request to the `/carts` endpoint.
+* You may add a description and name to the cart for internal tracking purposes.
+* Parse the JSON response to get the newly generated cart ID, which will be mandatory for any subsequent interactions with the cart.
+
+### Add Item to Cart
+
+When a shopper interacts with the “Add to cart” CTA, you can call the “Create a line item” endpoint to add a specified quantity of this product to the cart.
+
+Refer to [Create a line item](/reference/additem) for additional information about this endpoint.
+
+![](/images/example-add-to-cart.png)
+
+### Apply Coupon to Cart
+
+Applying coupons to shopping carts offers your shoppers the opportunity to maximize their purchasing power and enjoy incentives, enhancing their shopping experience. This serves as a win-win situation for both shoppers and businesses.
+
+When shoppers have a coupon code, they should be able to apply it to their cart to receive a predetermined discount.
+
+To apply a coupon, refer to the documentation of [Apply coupon to cart](/reference/applycoupon). You can find the updated cart price in the response body of this endpoint.
+
+### Get User's Carts
+
+The ability to maintain multiple carts enables shoppers to manage their shopping needs effectively. Some of the use cases are:
+
+1. **Distinct Shopping Lists**: Separate carts help accommodate different shopping lists based on specific occasions or purposes.
+2. **Saved Carts**: Separate carts for future purchases allow shoppers to keep track of products they plan to buy at a later time, such as when they have sufficient funds or to take advantage of upcoming discounts and promotions.
+
+To get the user's carts, make a GET request to the /carts endpoint with the user ID as a parameter. And, specify a limit and offset to have control over the paginated response and optimize resource utilization. When these attributes are not specified, you’ll get up to 10 records.
+
+**NOTE**: A paginated HTTP response is a way to handle large amounts of data online by breaking them into smaller pages. Each page contains a portion of the data, making it easier to manage and view the information.
+
+![](/images/example-added-to-cart.png)
+
+## Checkout
+
+Once a cart is created and contains the necessary data and fields, you can create the checkout session and finalize it. When the checkout session is successfully completed, an order will be automatically generated for the associated items in the cart.
+
+To create and complete a checkout session, as well as create a new order for the cart items, use the following endpoint: [Create and complete a checkout session](/reference/createsession).
+
+### Prerequisites
+
+To initiate and successfully complete the checkout session, the following prerequisites must be fulfilled:
+
+1. **Payment methods:** Configure all the acceptable payment methods for the tenant.
+2. **Payment Information:** When calling the [Create and complete a checkout session](/reference/createsession) endpoint, include the payment information in the request.
+3. **Shipping Details**: To ensure a smooth process of creating and completing the checkout session, it is necessary to add shipping details to all the items in the cart. Prior to calling the “Create and complete the checkout session” endpoint, verify that each cart item is associated with its shipping details. To create, update, and delete shipping details, use the [Shipping Details](/reference/shipping-details) endpoints. Once shipping details are created, use the [Update line item shipping details](/reference/updateshipping) endpoint to update each cart item with its respective shipping information. Multiple shipping details can be applied to accommodate split shipments or “deliveries to” and “pickup from” different addresses.
+
+### Creating and Completing a Checkout Session
+
+The following key pieces of information are required for the successful completion of the checkout session.
+
+1. **Cart ID**: This identifier is necessary to associate the checkout session with the items the shopper intends to purchase, as well as determine the shipping destinations.
+2. **Payment Information**: This includes the necessary details for completing the payment process. It involves determining the customer's chosen payment method, validating it, and ensuring a successful order creation. Multiple payment methods can be utilized simultaneously, such as splitting the payment between a gift card and a credit card.
+3. **Tax Information**: This encompasses the tax amount associated with each item in the cart, as well as the shipping tax amount linked to each shipping detail corresponding to the cart items.
+
+Apart from the mandatory information mentioned above, the request payload can also include optional data such as the personal information of the shopper, order metadata, and more. For example, you can include details about the medium through which the order was placed, distinguishing between web and mobile platforms. These optional data points provide additional context and can be included as per your specific requirements and the needs of your application.
+
+### The Checkout Response
+
+After calling the [Create and complete a checkout session](/reference/createsession) endpoint, an attempt is made to complete the checkout session and generate an order using fabric Orders. On successful completion, the server will respond with a success message. The response will also include the Order ID of the newly created order associated with the cart and the checkout session. This Order ID will be handy to perform various operations, including getting, updating, or deleting order details as well as viewing or canceling the order.
+
+In the event of a failed checkout session, you’ll get an error response indicating the cause of failure. For example, if the API call was made without the necessary information, such as the cart ID, a `400 - Bad Request` error is returned. Additionally, since the checkout session relies on various services to validate the checkout process, such as validating payment information or verifying the cart, a failure in any of these dependent services would trigger a `424 - Failed Dependency` client error. This error response will also include additional information about the specific point of failure, including the error message and details.
+
+### Processing the Checkout Request
+
+As mentioned previously, the checkout process relies on various interconnected services. Upon initiating the create and complete checkout session request, the cart undergoes validation depending on the client’s product configuration. The validation may involve multiple steps such as validating products in the cart using the Products service, verifying item stock through the Inventory service, and checking item prices and promotion validity using the Offers Price and Promotion services.
+
+If you have not opted for one or more of these services, certain validations will not occur. For instance, if you choose not to use fabric Offers, some of the validation related to promotions will be omitted since these validations solely depend on fabric services (rather than external ones).
+
+After the cart is validated, the Payment service is used to validate and authorize the selected payment method. When all the validations pass, an order is automatically generated for the cart items and the order ID is returned in the response. However, if any of these dependencies, such as Payment or Cart, encounter a failure, a `424 - Failed Dependency` client error is returned in the response. In such cases, the order is not created as expected.
+
+Upon successful creation of an order, the cart associated with the completed checkout session will be removed or deleted.
+
+### Post Checkout
+
+After a successful checkout, an order ID is generated for the purchased items in the cart. Using this order ID, customers can access and view additional details pertaining to their specific order. These details can be presented to customers in various ways, such as on an order confirmation screen, within their order history section, or elsewhere within the application.
+
+## Need help?
+
+If you have any questions, we’re here to help! Please reach out to support@fabric.inc or your customer service representative.

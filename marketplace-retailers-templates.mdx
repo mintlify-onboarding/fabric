@@ -1,0 +1,85 @@
+---
+title: "Templates"
+description: "Keep data consistent between internal and external systems"
+---
+
+> ## ❗️
+> 
+> Marketplace (Merchants) is now called Marketplace (Retailers)
+> 
+> Some of fabric's products are undergoing name changes. Marketplace (Merchants) is now Marketplace (Retailers), but you may see the old name in some places as we make the transition.
+
+## Overview
+
+Templates are a key feature of Marketplace that facilitates the data exchange of Marketplace with other external systems.
+
+To access the templates, login to your dashboard, select **Retailer Settings**, then **Product & Inventory Templates.**
+
+These templates are specific to the retailer and come in two varieties, product and inventory.
+
+### Product Templates
+
+* Pre-existing list of global attributes that is shared by all items and all businesses.
+* Retailers can use their own attribute names for the spreadsheets and will be able to see these names on the Marketplace platform UI
+* Templates are mappings between the Marketplace attributes and the attributes names defined by the retailer
+* Import templates are responsible for data ingestion into Marketplace
+* Export templates can be used for extracting data from Marketplace.  
+   * This allows the retailer and their suppliers to generate spreadsheets that match the template as required by other systems such as Shopify, fabric PIM, and others.
+
+### Retailers and Suppliers can create templates
+
+Retailers
+
+* Retailers can create templates for importing and exporting products.
+* Retailer’s templates are also accessible by all of their suppliers.
+
+Suppliers
+
+* Suppliers can create their own templates for importing and export products.
+* Supplier templates are only accessible by suppliers and cannot be seen by their retailers.
+
+## Create a template
+
+Click on **Create Template**
+
+Enter the **Template Name**
+
+Select **Product** as **Data Type**
+
+Select the **Direction** of template
+
+* Import - Select this if you want to use the template to import products into Marketplace
+* Export - Select this if you want to use the template to export products from Marketplace  
+   * Sample file  
+         * You need to provide a sample file of the template in order to create one  
+         * The sample file should only contain the header row of the spreadsheet you want to be using for the said operation  
+         * Once you upload the file, you will be asked to map the attributes
+
+### Map Attributes
+
+Marketplace automatically tries to map user-uploaded attributes with those of fabric Marketplace, however, all mapping needs to be checked by the user before creating the template. There are certain attributes that are relevant for most dropship businesses and need to be mapped and added to capture key details related to dropship products.
+
+You can accept the values Marketplace offers or enter your own for each column.
+
+Column Header - the name of the attribute in your file
+
+Map To - the name of the corresponding fabric Marketplace attribute
+
+* You should be able to find a similar attribute in the dropdown
+* In case you can’t find a match for your attribute in the list provided by fabric, please raise a request to support team
+
+Level - this indicates whether this is a parent or individual item attribute
+
+* This field is only relevant for an import template
+* Defines whether the attribute is relevant for the product (the parent item) or its variants
+* Most attributes are relevant for items
+* Attributes that leveled to Products will be inherited by all of the variants automatically
+
+Priority - dictates the order in which the attributes will appear everywhere in the platform UI and during the exports
+
+Required - indicate if this is a mandatory or optional attribute
+
+* This field is only relevant for product import templates.
+* If an attribute is mandatory in the import template, items without that attribute will show an error when imported through into Marketplace
+
+Click **Save Template**

@@ -1,0 +1,88 @@
+---
+title: "Shopify Integration"
+description: "Integrate your fabric Marketplace account with your Shopify account"
+---
+
+> ## ❗️
+> 
+> Marketplace (Merchants) is now called Marketplace (Retailers)
+> 
+> Some of fabric's products are undergoing name changes. Marketplace (Merchants) is now Marketplace (Retailers), but you may see the old name in some places as we make the transition.
+
+## Introduction
+
+To access Marketplace Integrations for Retailers, click on your account name in the menu across the top of Marketplace. In the dropdown that appears, select **Retailer Settings**. On the Retailer Settings page, find and click on the **Integrations** tile. 
+
+On the Integrations page, click on the **Add Integration** button at the top-right of the page. In the Add Integration popup that appears, click the **Add** button in the Shopify tile. You will be prompted to fill out your Shopify store URL and API Key. When finished, click the **Add Integration** button.
+
+After you enter your Shopify credentials in Marketplace, you will be directed to Shopify’s website. Click the **Install unlisted app** button to install the fabric Marketplace app in your Shopify profile.
+
+Once your credentials are entered and the app is installed, you are ready to begin configuring the various settings of your integration.
+
+## Integration Options
+
+On the Integrations page in fabric Marketplace, you will see the Shopify logo with an Options button next to it. Click the **Options** button and in the popup that appears, choose whether you would like to edit the **Configuration**, **Webhook History**, or **Utilities**.
+
+### Configuration
+
+The Configuration menu allows you to make changes to the basic Shopify setup.
+
+#### Orders
+
+Configure how your Shopify store syncs orders with fabric.
+
+When you enable a Shopify orders webhook, fabric will automatically import customer orders that contain items from your approved suppliers and distribute purchase orders to suppliers via their preferred integration method (Console, EDI, API, etc). When suppliers ship items, fulfillments and tracking numbers will be automatically synced back to the original customer order in your Shopify store account. 
+
+Use the **Select Webhook** dropdown to choose when fabric imports customer orders, either **Order Paid (Recommended)** or **Order Created**, and then click **Enable Integration**. 
+
+To disable order integrations, click the red **Disable Integration** button.
+
+#### Skip Fraud Order
+
+Configure what to do with orders that Shopify has flagged as fraudulent. 
+
+Enable this service if you would like to skip medium-risk orders as recommended by Shopify. High-risk orders are always skipped. The field is Disabled by default. Choose **Enabled** from the dropdown and then click **Save Preference** to turn this feature on.
+
+#### Location
+
+Set which inventory location to use when syncing inventory.
+
+When fabric updates inventory in Shopify, we have to assign the inventory to a location that is configured in your Shopify account.
+
+fabric recommends setting up a new, dedicated dropship location in order to keep your owned inventory separate from your dropship inventory. For more information on how to do that in Shopify, check the Shopify Help Center.
+
+Use the **Select Shopify Location** dropdown to choose your inventory location. Click **Save Location** when finished.
+
+#### Inventory
+
+Configure how your Shopify store syncs inventory with fabric. With this feature enabled, fabric can automatically sync supplier inventory movements to your Shopify store.
+
+Use the **Select Webhook** dropdown to choose how fabric sync orders, choose **Product/Inventory Updated (Recommended)**, and then click **Enable Integration**. 
+
+To disable inventory integrations, click the red **Disable Integration** button.
+
+### Webhook History
+
+The Webhook History menu shows a list of previous webhook callbacks. Click on a webhook ID to open the Inspect Webhook dialog. **Inspect Webhook** has basic information about the webhook at the top, any messages the webhook returned, and the script used to fetch the webhook.
+
+### Utilities
+
+#### Retry Order
+
+If an order didn't import into fabric, its likely that there was a problem routing the order to the correct supplier. If you have doubled-checked the SKUs and the Shopify mappings, you can attempt to import the order again by supplying the Shopify Order Number. 
+
+Enter the order number into the **Shopify Order Number** field and click the **Retry Order** button. Use the checkbox to toggle whether you would like to ignore Shopify’s fraud risk recommendation.
+
+#### Push Inventory
+
+This utility pushes inventory for all synced items from the specified connection. Use the dropdown to select the connection and then click **Push Inventory** to kickoff the sync process.
+
+#### Sync Variants by Vendor
+
+This utility attempts to sync variants between Shopify and fabric using a vendor name. It searches your Shopify store for all items created within the date range you specify and then attempts to sync them with variants in fabric. fabric checks if the Shopify variant's SKU field matches the Merchant SKU, the UPC, or the Supplier SKU (in that order).
+
+Use the Select Date Range field to choose whether you would like to look for products created between two given dates, or run a sync against all products (a process that can be very slow). After you’ve made your selection, click **Run Sync** to begin the process.
+
+#### Sync Variant
+
+Use this utility to sync variants between Shopify and fabric using a fabric Item ID. Enter a value in the **fabric Item ID** field and click **Run Sync**, and fabric will search your Shopify store for any items matching using the Merchant SKU, Vendor SKU, and/or UPC.

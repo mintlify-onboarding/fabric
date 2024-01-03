@@ -1,0 +1,278 @@
+---
+title: "Merchant Experience Quickstart Guide"
+description: "This quick start guide offers you step-by-step guidance to perform common merchant actions on the fabric Commerce Platform (fCP) using fabric’s Copilot application."
+---
+
+## Introduction
+
+We’ll cover how to add new products, set up promotions and prices, add inventory, and configure cart and checkout process. Whether you're a newcomer to the platform or seeking a refresher, this guide is designed to kickstart your journey.
+
+Once you have read this guide, we recommend checking out our [Shopper Experience Quickstart Guide](/docs/shopper-experience-quickstart-guide) to begin implementation of your storefront.
+
+## Target Audience
+
+This guide caters to a diverse range of user groups within an e-commerce merchant's team, including system administrators, developers, content managers, product managers, and other relevant stakeholders contributing to setting up a merchant implementation using fabric.
+
+## Glossary
+
+* **fCP**: fabric Commerce Platform (fCP) offers a range of features to effectively manage various aspects of your storefront, including merchandising, pricing, promotions, inventory, order processing, and shopper data. For your business operations, you can interact with fCP via fabric's administration interface called [Copilot](https://live.copilot.fabric.inc/).
+* **Copilot**: Acting as the central administration hub for fabric, Copilot offers a suite of services that empower you to directly manage your digital commerce requirements, minimizing reliance on technical development resources.
+* **CTA**: A call-to-action (CTA) is a specific action that you want a shopper to take. For instance, “Add to Cart” typically appears as a button on a webpage, encouraging users to add a product to their cart and move one step closer to checkout or conversion.
+* **Attributes**: Attributes serve as descriptors for assets such as products, categories, and collections. Custom attributes extend the meaning of an asset beyond what you can define with standard attributes such as name, description, etc.
+* **Mapping**: "Attribute mapping" provides you the flexibility to create attributes with your preferred names. For example, you may call a product’s unique identifier as Product ID whereas fabric may call it an SKU. With attribute mapping, it is possible to define Product ID = SKU. This way, you can continue using your preferred term "Product ID" and fabric will identify this attribute as "SKU" across all services such as Orders and Offers.
+* **Products**: Your products are the foundation of your e-commerce offering and consist of individual items, bundles, and variants. A single product (also referred to as an Item) is a service or a stand-alone item sold individually. Bundles are combo or collections of two or more products sold exclusively together or as individual products (depending on the configuration). Products can be added to the system manually or imported in bulk using CSV files. fabric validates these products to ensure data accuracy and integrity, guaranteeing consistent and high-quality information.
+* **Categories**: Each item is placed where it belongs within a category. For example, "Household" is a parent category with "Kitchen" and "Bath" as children categories, and "Dish Scrubber" is an item within "Kitchen". This organization can be represented as "Household" -> "Kitchen" -> "Dish Scrubber".
+* **Collections**: Collections serve as alternative organizational structures of the Category system, which is the original, single source for all items and categories. Their main purpose is to organize items on your e-commerce platform based on browsing structures you may need, e.g. organizational requirements, multi-regional assortments, and multi-channel assortments. For example, if your company sells a variety of home goods and appliances, you can create different Collections to cater to specific shopper segments. One Collection may focus on kitchen appliances and cookware for cooking enthusiasts, while another Collection could include furniture and home decor for interior design enthusiasts. These Collections act as filters within the Category system, enabling a targeted merchandising strategy.
+
+## Prerequisites
+
+You must have a fabric Copilot account.
+
+## Add new products
+
+Follow these steps to add new products to your Storefront using the fabric Commerce platform.
+
+### Step 1: Create Product Attributes
+
+On the fabric Commerce platform, you have the flexibility to create a vast range of product attributes to effectively describe your products. To manage existing attributes or to create new ones, go to Copilot **Products** → **Attributes** → **Product**.
+
+![](/images/example-product-attributes-copilot.png)
+
+You have the flexibility to customize each attribute according to your requirements. You can designate attributes as mandatory or optional, provide comprehensive descriptions, and select an attribute type such as List of Values, Date, Free Text String, Number, Boolean, or Serial.
+
+In addition, you can enhance attribute mapping by adding validations. For instance, you can enforce uniqueness in attributes' values across all products or categories, determine whether parent attributes should be inherited by children, as well as specify if an attribute should be mandatory.
+
+You can add, update, or delete attributes at any point in time. Users with Product Editor or System admin roles can upload attributes in bulk through the Copilot user interface.
+
+Here is a sample CSV to bulk upload attributes:
+
+| Attribute Title | Type       | Description              | Mandatory | Value 1 | Value 2 | Value X |
+| --------------- | ---------- | ------------------------ | --------- | ------- | ------- | ------- |
+| SKU             | SHORT TEXT | Unique item identifier   | TRUE      |         |         |         |
+| Active          | BOOLEAN    | Is product active or not | TRUE      |         |         |         |
+
+### Step 2: Map Attributes
+
+Prior to creating any product, it is necessary to establish attribute mappings. This allows the [Products service](/docs/products-overview) to recognize the attributes that should be shared with other services. While only the SKU attribute is mandatory to add a new product, we recommend mapping all the attributes listed in the below screenshot to ensure proper configuration of your Product catalog.
+
+**NOTE**: Attribute mappings can be updated only if there are no products present in the Product List (or Catalog).
+
+To update attributes in Copilot, Go to **Products** → **Settings** → **Attribute mapping**.  
+![](/images/example-copilot-attribute-mapping.png)
+
+To create and update attribute mappings using an API, refer to this document: [Create and Update attribute mappings](/reference/attributes-mapping).
+
+### Step 3: Create Product Category
+
+Product categorization plays a crucial role in a Product Information Management system as it enables you to logically organize your products. Within Copilot, you have the capability to create and update categories by navigating to **Products** → **Categories**.  
+![](/images/example-copilot-categories.png)
+
+Alternatively, you can accomplish these tasks through API by using the documentation available in [Create category](/reference/createcategory).
+
+The **Category** is the anchoring object that defines the organizational structure of a product list. Categories (also called hierarchies or nodes) form a hierarchical tree structure to organize items and services into intuitive groups. Organizing items this way simplifies item discovery on your e-commerce platform (website or app).
+
+On the other hand, a **Collection** is used to represent diverse merchandising objectives, including organizational needs, multi-regional assortments, multi-channel assortments, and collections by using separate browsing structures.
+
+### Step 4: Assign Product Attributes
+
+Adding attributes to products is crucial to better organize and categorize products, making it easier to search, filter, and analyze product data. For instance, in a clothing category, attributes such as color, size, and material are utilized, whereas in an electronics category, attributes such as screen size, resolution, and included accessories are employed.
+
+To assign product attributes in Copilot, go to **Products** → **Categories** → **\[Select category\]** → **Product attributes**.
+
+![Product attributes view in Categories](/images/example-copilot-categories-attributes.png)
+
+![Updating product attributes for a category](/images/example-copilot-updating-attributes-in-action.png)
+
+By mapping product attributes to categories, you can ensure that the attributes propagate to all subcategories. To map attributes, simply select the desired product attributes from the list of all available attributes.
+
+To use an API to add category attributes, refer to the documentation here: [Update category](/reference/updatecategory).
+
+### Step 5: Upload products
+
+You have two options to upload products:
+
+* **API** \- For details, refer to the documentation [Products](/reference/products-api-getting-started).
+* **Copilot** \- You can bulk upload using a CSV file. From your Copilot, go to **Products** → **List** → **Items**, then click **Import** for bulk uploading, or **New Item** to create a single product.
+
+![](/images/example-bulk-import-products.png)
+
+It is crucial to ensure the mandatory attributes such as Category Name and SKU are correctly mapped in the file. Also, when creating product variants, it is vital to map the Parent SKU to establish a relationship between the parent and its variants.
+
+Here is a sample CSV format:
+
+| Category Leaf     | SKU      | Title                               | Image                                                                                                                                      | Active | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------------- | -------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Furniture->Chairs | AGCHAIR1 | Lynn Velvet Accent Chair            | [https://fabric-site-app-static-sources.s3.amazonaws.com/Chair+1.png](https://fabric-site-app-static-sources.s3.amazonaws.com/Chair+1.png) | TRUE   | Give your living space a renewed feeling by adding this cool grey Lynn accent chair. Soft velvet fabric cloaks this glamorous piece for a luxurious look. Button-tufting covers the rear from edge to edge, while polished nailheads stud the back's outline to underscore the elegance of this piece. Sit back to savor the cushion's foam and fibre blend as the curved back wraps around you in a cozy hug. Refined and refreshing, this Lynn accent chair ups the chic factor in your space.                                                                                      |
+| Furniture->Chairs | AGCHAIR2 | Adel Linen-Look fabric Accent Chair | [https://fabric-site-app-static-sources.s3.amazonaws.com/Chair+2.png](https://fabric-site-app-static-sources.s3.amazonaws.com/Chair+2.png) | TRUE   | Savor your time at home with the comfort of this stylish beige Adel accent chair. Linen-look fabric envelops this piece for a charming and chic appeal. Both the seat and back cushion feature a mix of soft fibre fill and robust foam to ensure you stay snug while you binge-watch your favourite TV shows. While the upholstery provides a neutral base to emphasize however you want, the dark brown wood legs reach up to frame the chair's base with fashionable stability. Keep your living space looking modern and inviting with this elegantly designed Adel accent chair. |
+
+## Add prices and promotions
+
+fCP’s **Offers** service works in conjunction with **Products** service to set up and manage product prices. "Offers" provides a wide range of coupon and promotion features, enabling you to design various types of deals, including single-use coupons, customer-specific offers, as well as site-wide promotions.
+
+* Promotions are automatically applied discounts when the specified conditions are met by the products or the cart.
+* A coupon is a specific type of promotion that involves the use of a unique code. Shoppers can apply this code during the purchase of specific products or in the cart to receive the associated discount.
+
+Follow these steps to add prices and promotions.
+
+### Step 1: Adding price to SKUs
+
+To set a price for an item in Copilot, go to **Offers** → **Pricing** and search for the SKU for which you wish to update the price.  
+![Add price via Copilot](/images/example-add-prices-to-skus.png)
+
+You can also bulk upload prices:
+
+![Bulk upload prices to associate to product items](/images/example-bulk-upload-prices.png)
+
+Here is a sample CSV for bulk upload:
+
+| SKU      | Cost | Price | Clearance Price | Start Date (UTC)         | Price List Name |
+| -------- | ---- | ----- | --------------- | ------------------------ | --------------- |
+| AGCHAIR1 | 205  | 399   | 300             | 2023-06-03T00:45:00.000Z | Default         |
+| AGCHAIR2 | 468  | 785   | 700             | 2023-06-03T00:45:00.000Z | Default         |
+
+* Cost - Cost of goods sold, or the direct cost to source and/or manufacture the products.
+* Price - Price at which the product is being sold.
+* Clearance - Lowest amount to sell the item.
+
+Alternatively, you can use the endpoint [Create price](/reference/createprices) to create prices.
+
+### Step 2: Add promotions
+
+To create and update promotions, go to the **Promotions** tab of Copilot Offers and click **\+ Add Promotion**.
+
+![Add Promotion via Copilot](/images/example-add-promo.png)
+
+On this page, you can enable or disable promotions as well as choose whether to apply them to all eligible SKUs or only to SKUs from select Price Lists. You also have the flexibility to configure stackable and non-stackable promotions, set limits on the number of discounts a shopper can avail, and create promotions based on SKU quantity or minimum cart value thresholds.
+
+![Promotion details](/images/example-add-promo.png)
+
+Using the Search box, you can search for specific promotions and sort the results using table headers.
+
+To create a promotion through API, refer to [Create promotion](/reference/createpromotion).
+
+## Add inventory
+
+fabric's **Locations** and **Inventory** services offer integration options for merchants like you who have external sources of truth for your location and inventory data. Through custom integrations, you can automatically and seamlessly sync your data with fabric at regular intervals by using fabric's APIs.
+
+To access real-time inventory for your Storefront, you must first create a **Network**, which is an aggregation of inventory. These networks should be the source of truth for inventory aggregation rules. The inventory aggregation process within the Network service is done real-time, capturing and combining the inventory quantity for each SKU across multiple locations within the network. This allows you to effectively monitor the availability levels across various locations.
+
+In addition, fabric’s **Orders** service is designed to unify orchestration of transactional data, providing a centralized solution for managing the entire order process.
+
+If you do not have an external source of truth for your location and inventory information, you can use fabric’s out-of-the-box functionality to fulfill your needs.
+
+**Locations** define location details and manage how orders are fulfilled. **Networks**, on the other hand, are groups of locations that share inventory. By assigning a network code, Storefronts can access inventory using the network code.
+
+### Step 1: Create Locations
+
+To create a new Location in Copilot, go to **Orders** → **Locations** → **Create Location**.
+
+![](/images/example-create-locations.png)
+
+![](/images/example-create-location-details.png)
+
+Specify location details such as location name, address, and point of contact.
+
+To create a new location via the API, refer to [Create a location](/reference/createlocation).
+
+### Step 2: Create Location Attributes (Optional)
+
+Location attributes enable the customization of specific properties, such as temporary closure, access restrictions, and pickup and return options. By adding these attributes, you can offer supplementary information regarding your locations.
+
+![](/images/example-create-location-attribute.png)
+
+### Step 3: Define Networks
+
+The primary objective of a network is to consolidate inventory for a group of locations based on inclusion and exclusion rules. These locations might include stores, warehouses, and outlets.
+
+* A **Single Network** defines inventory availability rules for items and locations.
+* **Multiple Networks** are formed by grouping two or more Single Networks, allowing different types of locations to be set up within the retail system.
+
+To create a new Network on Copilot, navigate to **Orders** → **Networks** and click **Create Network**.
+
+![Create Network](/images/example-no-networks.png)
+
+![Enter network details](/images/example-network-details-on-create.png)
+
+To set up networks via the API, see [Create inventory network](/reference/createnetwork).
+
+### Step 4: Create Inventory
+
+Creating inventory is an essential step in managing your products. This process is critical for ensuring accurate inventory counts, minimizing the risk of stockouts or overstocks, and facilitating efficient order fulfillment.
+
+Go to **Orders** → **Inventory** to bulk upload inventory details for products. Most inventory updates are done through API; refer to [Update inventory by adding new property](/reference/updateinventory) for more details.
+
+![](/images/example-create-inventory.png)
+
+Here is a sample CSV to update inventories positions:
+
+| SKU      | Item ID | Location Number | Channel Id | onHand | allocated | shipped |
+| -------- | ------- | --------------- | ---------- | ------ | --------- | ------- |
+| AGCHAIR1 | 12      | 10              | brand      | 1000   | 0         | 0       |
+
+Here is a sample to update inventory root attributes:
+
+| Sku      | Item ID | Location Number | Channel Id | Vendor Id | Lead Time | Inventory Type | Infinite Inventory | Backorder Date | Backorder Limit | Preorder Date | Preorder Limit | Safety Stock | Low Stock | Segment |
+| -------- | ------- | --------------- | ---------- | --------- | --------- | -------------- | ------------------ | -------------- | --------------- | ------------- | -------------- | ------------ | --------- | ------- |
+| AGCHAIR1 | 12      | 10              | brand      | vendor1   | 12        | Stock          | false              | 2023-06-07     | 10              | 0             | 10             | 2            | 123       |         |
+
+## Configure Search
+
+### fabric search via Algolia
+
+fabric uses Algolia, a prominent search provider renowned for its advanced search capabilities in the e-commerce Storefronts, to power the Search functionality. fabric provides an indexing process that updates Products, Inventory, and Offers multiple times per day, automatically feeding them into an Algolia instance managed by fabric on behalf of the merchant. For optimal and swift shopper experiences, we recommend that Storefronts establish a direct connection with Algolia to populate a Product Listing Page (PLP). Your fabric customer success representative will supply you with your Algolia customer index and key to get you started.
+
+Common shopping experiences that Algolia enables include:
+
+1. **Product Search**: Robust search capabilities to help shoppers easily find the products they're looking for. This will help boost the conversion rates on your Storefront.
+2. **Product filtering and sorting**: Sorting and filtering features allow shoppers to quickly find the products based on their preferences, specially when you have a large collection. You can organize your products by price, popularity, color, size, and more. This enables shoppers to find what they need with just a few clicks.
+3. **Product availability display**: Managing out-of-stock products vary across e-commerce stores. Some stores display “Out of Stock” notification banner, while others will hide the product altogether. Algolia allows you to communicate product availability to shoppers according to your preferred approach.
+4. **Product offers**: Highlight product offers, discounts, and promotions to grab shoppers' attention and encourage them to make a purchase. Shoppers are always seeking deals and bargains. Showcasing discounts can create a sense of value and urgency.
+5. **Add to cart**: "Add to cart" is the most important call-to-action (CTA) on the Products Listing Page (PLP) to encourage a shopper to convert and move them through the sales funnel.
+
+**NOTE**: If you wish to use a search engine alternative to Algolia, contact your fabric Customer Support Representative.
+
+Your customer service representative support@fabric.inc will walk you through the process to configure Algolia for your specific needs. During the configuration process, you will be prompted to provide information on following:
+
+* The total number of SKUs in your Storefront.
+* Whether to display product variants on a PLP.
+* The number of attributes per product.
+* Desired filters and sorting options on the PLP.
+* The Algolia [facets](https://www.algolia.com/blog/ux/filters-vs-facets-in-site-search/) you wish to configure.
+* Additional search features to be enabled, such as autocomplete, recent searches, and popular searches.
+* Whether to display out-of-stock items.
+
+## Configure Checkout
+
+### Configuring payment methods
+
+Outlined below is the process for setting up available payment methods.
+
+For custom payment configurations that we do not support out of the box, contact your customer service representative.
+
+To configure the fabric Checkout service, provide the necessary API keys from your payment provider. These keys will allow us to establish the necessary integration and facilitate smooth payment processing.
+
+### Payment Providers we currently support
+
+We are always adding support for more payment providers to this list. If there is a payment provider that you'd like to use that is not on this list, please contact your customer service representative.
+
+| **Provider** | **Method(s)**   | **Auth** | **Capture** | **Void** | **Refund** |
+| ------------ | --------------- | -------- | ----------- | -------- | ---------- |
+| Authorizenet | CC/Bank Account | ✅        | ✅           | ✅        | ✅          |
+| Cybersource  | CC              | ✅        | ✅           | ✅        | ✅          |
+| Balance      | CC/Terms        | ✅        | ✅           | ✅        | ✅          |
+| Checkout.com | CC              | ✅        | ✅           | ✅        | ✅          |
+| Checkout.com | Tamara          | ✅        | ✅           | ✅        | ✅          |
+| Checkout.com | Apple Pay       | ✅        | ✅           | ✅        | ✅          |
+| Tabby        | CC/BNPL         | ✅        | ✅           | ✅        | ✅          |
+| Braintree    | CC              | ✅        | ✅           | ✅        | ✅          |
+| Braintree    | PayPal          | ✅        | ✅           | ✅        | ✅          |
+| Braintree    | ApplePay        | ✅        | ✅           | ✅        | ✅          |
+| Stripe       | CC              | ✅        | ✅           | ✅        | ✅          |
+| Verifone     | CC              | ✅        | ✅           | ✅        | ✅          |
+| Verifone     | PayPal          | ✅        | ❌           | ✅        | ✅          |
+| Verifone     | ApplePay        | ✅        | ✅           | ✅        | ✅          |
+| Verifone     | GooglePay       | ✅        | ✅           | ✅        | ✅          |
+
+## Need help?
+
+If you have any questions, we’re here to help! Please reach out to support@fabric.inc or your customer service representative.

@@ -1,0 +1,31 @@
+---
+title: "Attribute Mapping Overview"
+---
+
+### Overview
+
+Before creating items in Products, proper attribute mapping is essential to ensure other systems can read and use data from Products.
+
+fabric has a predefined set of mandatory attributes for items and bundles that Products uses to deliver a consistent and reliable experience across channels.
+
+However, merchants may have their own naming conventions for these attributes. For instance, Products uses the term SKU to refer to a unique product identifier while some merchants use the terms UPC or Part Number. To address this inconsistency, merchant-defined attributes are mapped to fabric attributes as productId -> fabric SKU.
+
+Only the SKU is mandatory to create items, but each basic attribute should be mapped to exactly one attribute from the list of attributes.
+
+Attribute mapping is done once, prior to uploading any items or bundles. After you have mapped the attributes and begun uploading, the features in attribute mapping are disabled.
+
+### Basic Attributes Detail
+
+Refer to the following table for more information about each attribute.
+
+| Mapping Name          | Attribute Specifications                       | Why does this need to be mapped?                                                                                                                                                                                                                                                  |
+| --------------------- | ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| SKU                   | Must be a mandatory Attribute                  | Each SKU value must be unique. This attribute serves as the primary identifier for items to be created in Products.                                                                                                                                                               |
+| Product Title         | A text or number type attribute is recommended | This attribute helps Products identify the display name of the item or bundle.                                                                                                                                                                                                    |
+| Primary Product Image | A text type attribute is recommended here      | This attribute helps Products identify the main image of the product for thumbnail purposes.                                                                                                                                                                                      |
+| Active                | Must be a mandatory attribute                  | Must be a Boolean type attribute. Name the attribute to be Active which can be set to true/false. Required to maintain the status of item to active/disabled. Only items where status is set to Active=TRUE will be available for the commerce API to consume.                    |
+| Variant Attribute     | A text type attribute is recommended           | This attribute helps fabric applications identify the attributes that drive variants for items, like color, size, or material. If there are more than one of these attributes, put their exact titles separated by a comma in the attribute value field on the Item Details page. |
+
+### Related Topics
+
+* [How to Map Attributes](/docs/products-settings-mapping-attributes)

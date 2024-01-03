@@ -1,0 +1,375 @@
+---
+title: "Glossary"
+---
+
+## A
+
+### Access Control
+
+A method to verify that the user has permission to access the requested resource.
+
+### Access Token
+
+A signed JSON web token provided to an application after successful authentication by fabric Identity. It serves as a Bearer token when starting fabric platform APIs.
+
+### Account
+
+The primary entity through which the commerce solutions are delivered to the fabric product customers. It acts as the dedicated repository for all their data. Customers have the option to create multiple accounts for different purposes, ensuring data segregation. When you log in to Copilot, you gain access to the specific contents of the account belonging to the customer of fabric products. This customer refers to the user of fabric products and not the customers of stores using fabric services.
+
+### Account ID
+
+A custom header used by the API to identify the tenant making the request, found in the Copilot application. Tenant ID is required to access any of fabric’s endpoints.
+
+Related Terms:
+
+* [Tenant ID](#tenant-id)
+
+### [Allocation](/reference/about-order-allocations)
+
+The record specifying the locations from which an order is fulfilled, allowing retailers to effectively manage order allocations.
+
+### App
+
+All API clients or applications that call any of the fabric platform APIs. Each application requires a bearer token authentication to interact with other fabric APIs. For example, Order Managment System (OMS) or Enterprise Resource Planning (ERP).
+
+### App Name
+
+The name of the application.
+
+### App Types
+
+The type of the application, such as system application or user application. The type of app helps you determine the authentication process with fabric Identity. 
+
+### [Attribute](/docs/products-attributes)
+
+A specific characteristic, quality, or feature of a product or category, used to describe, classify, or differentiate items within a system or platform. fabric Products supports two types of attributes, such as [product attributes and category attributes](/docs/products-attributes).
+
+### [Attribute Groups](/reference/attribute-groups)
+
+A collection of product attributes that helps categorize products into various semantic groups based on meaning and purpose, allowing for easier management and organization of products in the catalog. 
+
+### Authentication
+
+The mechanism of validating the identity of an application or its end user with fabric Identity. After validating the identity, fabric Identity generates and signs an access token, used as a bearer token to call fabric platform APIs.
+
+### Authorization
+
+A method to restrict access to certain APIs after successful authentication, supporting role-based access control on fabric's platform APIs.
+
+## B
+
+### Base Price
+
+The regular amount that a merchant charge shoppers to purchase an item. These are specified within a [price list](#price-list).
+
+### Base URL
+
+The standard URL to which the requests are sent for all fabric APIs.
+
+Related terms:
+
+* [Location](#location)
+
+## C
+
+### Cart and Checkout (CnC)
+
+fabric's service for the management of online shopping [carts](/reference/cart-getting-started), including items and configuration of shipping, fulfillment, and payment options.
+
+### Categories
+
+[Categories](/docs/products-categories), also called hierarchies or nodes, form a hierarchical tree structure to organize items and services into a group.
+
+Related terms:
+
+* [Hierarchy](#hierarchy)
+* [Node](#node)
+
+### Channel
+
+A specific avenue or method through which a merchant sells their products or services. It indicates the source of a sale and can include various options such as web storefronts, retail stores, mobile apps, or other platforms.
+
+### [Client ID](/docs/getting-sysapp-credentials)
+
+A unique ID that represents the sysapp, and is required for OpenID Connect authentication flows.
+
+### [Client Secret](/docs/getting-sysapp-credentials)
+
+An app-specific secret that allows fabric Identity to validate the sysapp. This secret is mandatory for sysapps to integrate with fabric Identity.
+
+### Collections
+
+[Collections](/docs/products-collections) create a representational categorization of products and are primarily used by merchants for short-term marketing campaigns. 
+
+### [Copilot](https://live.copilot.fabric.inc/)
+
+The web-based user interface to access all fabric applications.
+
+### [Counters](/reference/about-inventory-counters)
+
+Inventory positions such as, available, in-transit, on-hand, or other custom positions
+
+### [Coupons](/docs/offers-coupons)
+
+Discounts on items, carts, or shipping that are applied to qualified purchases when shoppers provide a valid coupon code during the checkout process.
+
+### Customer
+
+The user of fabric products.
+
+### Customer Organization
+
+A customer organization, also called a customer org, refers to a customer entity that can encompass multiple accounts or tenants. It provides a structure for managing multiple accounts within a single organization.
+
+## E
+
+### Endpoint
+
+The API communications channel, which is a specific URL or address in a web service or API, where client applications can access or interact with the service to retrieve or send data.
+
+Related terms:
+
+* [Resource](#resource)
+
+## F
+
+### [fabric Customer](/docs/customer-overview)
+
+fabric service that allows you to manage information for the customers and organizations you do business with, including the contracts you may have with them.
+
+### fCP
+
+fabric Commerce Platform (fCP) offers a range of features to effectively manage various aspects of your storefront, including merchandising, pricing, promotions, inventory, order processing, and shopper data. For your business operations, you can interact with fCP through fabric's administration interface called [Copilot](https://live.copilot.fabric.inc/).
+
+## H
+
+### Header
+
+This flag is used to include headers in the API request. The most commonly used headers in fabric APIs are described in the Getting Started with fabric API section. 
+
+### [Hierarchy](/docs/products-categories)
+
+A tree structure to organize items and services into a group.
+
+Related terms:
+
+* [Category](#categories)
+* [Node](#node)
+
+## I
+
+### [Inventory](/reference/about-inventory)
+
+A repository of product availability for order fulfillment.
+
+### Item
+
+A standalone service or commodity sold individually. An item is also referred to as a product.
+
+### Item Variant
+
+A different version of a base product. An item variant is also referred to as a child product.
+
+Related Terms:
+
+* [Variant](#variants)
+
+## L
+
+### Location
+
+The standard URL to which the requests are sent for all fabric APIs.
+
+Related Terms:
+
+* [Base URL](#base-url)
+
+## M
+
+### Mapping
+
+Mapping, also called [attribute mapping](/reference/attributes-mapping), provides you the flexibility to create attributes with your preferred names. 
+
+### Merchant
+
+The paying customer who uses fabric's services.
+
+### Multichannel
+
+A merchant who sells their products or services through multiple sales channels, which could encompass web, retail, mobile, and other diverse avenues, for reaching customers.
+
+### Multi use
+
+[Multi-use Coupon Code](#multi-use-coupon-code)
+
+### Multi-use Coupon Code
+
+A coupon code that can be used by multiple customers up to the specified limit.
+
+### Multitenant
+
+An infrastructure model used by fabric to manage multiple customers, the users of fabric products, on shared infrastructure, including shared compute and storage resources. 
+
+## N
+
+### Network
+
+A group of locations that share inventory. 
+
+### Node
+
+A tree structure to organize items and services into a group.
+
+Related terms:
+
+* [Category](#categories)
+* [Hierarchy](#hierarchy)
+
+## O
+
+### Offer
+
+A combination of items, their respective prices, and any relevant discounts that a shopper can avail of. Offers remain valid for a limited duration and expires after that.
+
+### [Offers](/reference/offers-getting-started)
+
+fabric’s pricing and promotions engine with tools to manage price lists, item prices, and discounts.
+
+### OpenID Connect
+
+An established standard based on [OAuth 2.0](https://oauth.net/2/), defining authentication flows specific to cloud-based applications.
+
+### [OMS](/docs/orders-overview)
+
+fabric’s Order Management System (OMS), also called as fabric Orders, is a distributed order management (DOM) platform that helps retailers manage the order fulfillment process and provide inventory details, order fulfillment, and customer service.
+
+### [Orders](/docs/orders-overview)
+
+[OMS](#oms)
+
+## P
+
+### [Price lists](/reference/price-lists)
+
+A collection of items and their assigned prices with start and end date and time for each price record.
+
+### [Products](/docs/products-overview)
+
+A single [product](/reference/products-api-getting-started), also referred to as an item, is a service or a stand-alone item sold individually. Bundles are combinations of two or more products sold exclusively together or as individual products depending on the configuration. Within fabric, Products is used to denote the entire end-to-end Product Information Management (PIM) system.
+
+### [Promotions](/reference/promotions)
+
+Discounts on items, carts, or shipping that are applied automatically if the required conditions are met. 
+
+### [PIM](/docs/products-overview)
+
+Product Information Management (PIM) is now called [Products](#products).
+
+## R
+
+### [RBAC](/docs/role-based-access-control)
+
+[Role-Based Access Control (RBAC)](/docs/role-based-access-control). With role-based access control in fabric, you can control and limit the access to information and actions based on the roles assigned to the users.
+
+### Redemption
+
+The instance when a shopper uses a coupon code to make a purchase. Redemptions help track coupon limits across the site or per customer and are associated with specific orders.
+
+### Resource
+
+The API communications channel, which is a specific URL or address in a web service or API, where client applications can access or interact with the service to retrieve or send data.
+
+Related terms:
+
+* [Endpoint](#endpoint)
+
+## S
+
+### Sale price
+
+The lowest amount that a mechant charge shoppers to purchase an item without a promotion or coupon. These are specified within a [price list](#price-list).
+
+### Scratch
+
+[Scratch item](#scratch-item)
+
+### Scratch Item
+
+An item that is designated as unavailable within an order due to various reasons such as being damaged, out of stock, not found, or on hold.
+
+### [Segment](/reference/segments)
+
+A group of customers that share similar characteristics, such as loyalty status, demographics, location, or device type.
+
+### SKU
+
+Stock Keeping Unit (SKU). A unique identifier for each item that can be purchased or sold. Each variant of a product will also have a unique SKU to differentiate it from other variations of the same product.
+
+### Shopper
+
+A shopper refers to the end user or consumer who interacts with a merchant's products or services, such as the storefront.
+
+### [Shopper Identity](/reference/shopper-identity-getting-started)
+
+The fabric API for fabric customers to manage their identity while enabling administrators to manage users' accounts.
+
+### Single-use
+
+[Single-use Coupon Code](#single-use-coupon-code)
+
+### Single-use Coupon Code
+
+Large numbers of unique coupon codes that can can be used once by an individual shopper.
+
+### Stacking
+
+Stacking refers to the ability to combine multiple discounts on a single item, cart, or shipping, increasing the total savings for the shopper.  
+Merchants can configure promotions and coupons to either allow stacking or prevent it. 
+
+### Store
+
+A physical retail location for brick-and-mortar merchants or a web store. A web store represents a digital storefront where products or services are displayed and sold.
+
+### Sysapp
+
+Sysapp, also called as [System App](/docs/creating-system-app), is a software application that generates an access token to establish its identity by utilizing a [client ID](#client-id) and [client secret](#client-secret). Unlike regular user applications, sysapps do not rely on fabric Identity for authenticating end users. Instead, they employ system-to-system communication with fabric APIs to fulfill their intended functionalities and services.
+
+## T
+
+### Tenant
+
+A customer or organization that uses fabric to manage and sell their products or services, typically through multiple channels.
+
+### [Tenant ID](/docs/account-details-getting-account-id)
+
+A custom header used by the API to identify the tenant making the request, found in the Copilot application. Tenant ID is required to access any of fabric’s endpoints.
+
+Related Terms:
+
+* [Account ID](#account-id)
+
+## U
+
+### User Pool
+
+The user directory where user credentials are stored.
+
+### User App
+
+User app, also called [user application](/docs/creating-user-app), is a type of API app that uses [fabric identity ](/reference/concepts)to authenticate end users. 
+
+## V
+
+### Variants
+
+A different version of a base product. An item variant is also referred to as a child product.
+
+Related Terms:
+
+* [Item variant](#item-variant)
+
+## W
+
+### Webhooks
+
+The feature that sends real-time notifications to a designated URL when merchants subscribe to fabric events.

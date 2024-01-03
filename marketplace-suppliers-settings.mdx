@@ -1,0 +1,253 @@
+---
+title: "Settings"
+description: "Manage information about your business and its operations."
+---
+
+> ## ❗️
+> 
+> Marketplace (Vendors) is now called Marketplace (Suppliers)
+> 
+> Some of fabric's products are undergoing name changes. Marketplace (Merchants) is now Marketplace (Suppliers), but you may see the old name in some places as we make the transition.
+
+## Introduction
+
+To access Supplier Settings, click on your account name in the menu at the top of the page. In the dropdown menu that appears, select **Supplier Settings**.
+
+Use the tiles on the Supplier Settings page to manage everything from general information and user privileges to API clients and webhook settings.
+
+## General Information
+
+#### Key Details
+
+Manage general information about your business.
+
+* Name: The name of your business as it appears in fabric Marketplace.
+* Website URL: Your business’s URL.
+* Connections Manager: The key contact for all supplier business inquiries.
+* Merchandising Manager: The contact person for all product & inventory inquiries.
+* Transactions Manager: The contact person for all order and fulfillment inquiries.
+
+#### Business Address
+
+Manage your business’s physical location information. Please note that it is mandatory to set a business address before you can start dropshipping with fabric Marketplace.
+
+## Currency Settings
+
+Manage the currency of your account. Use the dropdown menu to select your business’s primary currency. This will help Marketplace apply location-specific configurations for things like a product’s cost and price. Supported currencies include United States Dollar, Canadian Dollar, British Pound Sterling, and Euros.
+
+## Notifications
+
+Marketplace supports real-time push notifications so that you can receive alerts related to transaction events.
+
+To enable a notification, enter an email address or a distribution list the corresponding field, and then use the toggle menu to set the notification to **Enabled** or **Not Enabled**.
+
+Types of **Transaction Notifications**:
+
+* Connection Notifications: Notifications related to your connections and connection notes.
+* Order Received: Notifications when a new order is received.
+* Order Canceled: Notifications when a cancellation request is received.
+* Order Ship To Address Updated: Notifications when a “ship to” address change request is received.
+* Message Received: Notifications when a new message is received on an orders.
+* Return Received: Notifications when a new RMA is created on an order.
+* Return Approved/Rejected: Notifications when an RMAs is approved or rejected.
+
+In addition, **Digest Notifications** allow you to receive daily, aggregated reports on any late purchase orders.
+
+## Branding
+
+Use the Branding menu to upload your business’s logo. It will be displayed to your partners throughout the fabric platform and included on your packing slip.
+
+The ideal logo is a 360x120 pixel PNG.
+
+Click on the **Upload From Device** button to browse files on your computer to upload. Once you’ve selected a file, click and drag the preview to zoom, pan, and crop the image.
+
+When finished, click **Save**.
+
+## Payment Settings (Staff Only)
+
+Connect your bank account to your fabric Marketplace profile for automatic payments through Plaid. Click on the **Open Plaid** button to begin the setup process within Plaid.
+
+## Inventory Settings
+
+Register and update fulfillment and inventory locations.
+
+#### Inventory Tracking
+
+Configure how fabric tracks your inventory by choosing between Managed or Unmanaged.
+
+* With **Managed** inventory tracking, fabric will track and share inventory positions with your retail partners. Managed inventory is automatically updated when orders ship, inventory is updated, or new proposals are sent. If you are using an integration to manage inventory, it will automatically be refreshed through your integration.
+* With **Unmanaged** inventory tracking, fabric will NOT track inventory for any items. The fabric platform will assume all items listed in your inventory are always in stock.
+
+Once you’ve made your selection, click **Update** to save your changes.
+
+#### Fulfillment Locations
+
+Manage the locations you stock with inventory and fulfill orders from. These locations are only used for shipping and carrier services and aren’t synched with warehouse locations. There is no limit to the number of locations you can add.
+
+To add a new location, click on the **Add Location** button and fill out the fields in the popup that appears. When finished, click the **Add Location** button in the popup.
+
+Make changes to a location you’ve already created by clicking on its corresponding **Edit** button.
+
+## User Management
+
+Invite new users and manage existing ones.
+
+#### Creating a new user
+
+To add a user to the account, click on the **Add New User** button. Enter the new user’s first name, last name, and email address, and fabric will send them an email with instructions to activate their user account.
+
+#### Editing a user
+
+To edit a user’s account information, find and click on their name on the User Management page.
+
+The **General Settings** section allows you to edit basic profile information that identifies the user across the fabric platform. Use the Status dropdown menu to change the account between Active, Suspended, and Invited. When finished with your changes, click **Update**.
+
+The **Role** section allows you to configure a user’s access level. Click **Add Role** to assign a user a new role. To edit a user’s existing role, click on the role and the Update Role popup will appear. Select a new role for the user in the dropdown menu and click Save Role.
+
+**Security Credentials** allows you to give the user a new temporary password. Use the New Password and Confirm Password fields to create their new password. Upon logging in, the user will be required to change their password.
+
+Security Info shows details from the last time the user signed in to fabric.
+
+## API Clients
+
+Manage API keys for your account.
+
+#### Adding a new API Client
+
+To add a new client, click on the **Add API Client** button, give the client a name, and click **Create Client**. After the client is created, you will be able to retrieve their credentials.
+
+#### Accessing Client Credentials
+
+To access a client’s credentials, find and click on their name on the API Clients page.
+
+The Client Credentials section shows the name you gave the client, their API URL, their Brand ID, and Client ID, along with the Client Secret. To access the client secret, click on **Get Client Secret**. **However, you can only access the client secret once.** When you’re ready, click on the Show API Secret button. The API secret will be shown, along with a copy button so that you can save it. If you need to access the client secret again, please submit a support ticket.
+
+## Integrations
+
+Manage existing integrations associated with your account and add new ones.
+
+fabric Marketplace supports integrations with Shopify, WooCommerce, BigCommerce, ShipStation, returnly, and others.
+
+#### Adding an Integration
+
+Basic setup for integration with third-party platforms consists of clicking on the **Add Integration** button at the top-right of the page. In the Add Integration popup that appears, click the **Add** button next to the platform you’d like to integrate with. From there, integrating with each platform is different, but setup includes information like the API Key, API Secret, or Store URL.
+
+For specific setup instructions for each platform, please see the following documents:
+
+* [Shopify](/docs/marketplace-suppliers-shopify-integration)
+* [WooCommerce](/docs/woo-commerce-integration)
+* [BigCommerce](/docs/bigcommerce-integration)
+* [ShipStation](/docs/shipstation-integration)
+* [returnly](/docs/returnly-integration)
+
+#### Integration Options
+
+Existing integrations appear on the Integrations page below the Add Integration button. To manage an existing integration, find and click on its corresponding **Options** menu. The options in the popup that appears are shortcuts to edit settings within the integration. See the platform-specific setup instructions above for more details.
+
+## Webhooks (Advanced)
+
+Configure webhooks and review webhook history.
+
+#### Webhooks
+
+Configure webhooks to listen to key events from the fabric platform. To add a new webhook, click on the **Add Webhook** button.
+
+* Item Inventory updated
+* Offer Created
+* Order Created
+* Order Closed
+* Shipment Closed
+* Cancel Created
+* Invoice Created
+
+The **Method** dropdown menu allows you to choose between post, put, and patch.
+
+In the **URL** field, enter the webhook URL.
+
+Use the **Status** dropdown menu to choose whether the webhook is Enabled or Disabled.
+
+When finished, click **Add Webhook**.
+
+#### Webhook History
+
+Review recent webhook results.
+
+## Proposal Departments
+
+Visit the [Proposals](https://knowledgebase.fabric.inc/knowledgebase/marketplace/proposals) page to learn more about Proposal Departments in fabric Marketplace.
+
+#### Creating a Proposal Department
+
+To create a new Proposal Department, click the **Create** button at the top-right of the page and fill out the fields in the **Create Department** popup that appears.
+
+* Name: Give the Department a name
+* Product Import Template: select from fabric’s default templates or a template you created
+* Supplier Ruleset: Select the attribute validations that suppliers must meet
+* Retailer Ruleset: Select the attribute validations that you must meet
+* Sample Template URL (optional)
+
+## Attribute Value Transformers
+
+Visit the [Transformers](https://knowledgebase.fabric.inc/knowledgebase/marketplace/account-settings/transformer) page to learn more about Attribute Value Transformers in fabric Marketplace.
+
+#### Creating a Transformer
+
+To create a new Transformer, click the **Create Transformer** button at the top-right of the page, give the Transformer a name, and click **Save**.
+
+#### Editing Transformer Attributes
+
+To add a new Transformation Attribute, click in the search field in the **Transformation Attributes** section. A list of all attributes will appear. Search through the list of attributes or begin typing the name of the attribute you would like to add. When you find the desired attribute, click on it to add it to the list of your transformation attributes.
+
+Attributes you’ve added will appear in a list below the search bar.
+
+Clicking on an attribute you’ve added will take you to the Edit Transformations page to make changes.
+
+The **Attribute Settings** section allows you to update the attribute for the transformation. Click the **Edit** button to search for a different attribute. Click **Update** when finished.
+
+The **Transformation Settings** section allows you to configure transformations for the attribute. Enter an **Attribute Value Match** and a **Transformation Output Value** and click **Create**.
+
+The attributes you create in the Transformation Settings section will appear in the **Transformations** section below. Edit an attribute by clicking on its corresponding **Edit** button. In the popup that appears, you can give the attribute a new Attribute Value Match and a new Translation Output. Click **Update** when finished
+
+## Product & Inventory Templates
+
+Create and manage product and inventory templates.
+
+#### Creating a New Template
+
+To create a new template, click on the **Create Template** button. On the Create Template page, give the template a name, select the data type, and choose whether this template imports to Marketplace, or exports from Marketplace.
+
+Click and drag a test file from your computer to the **Sample File** field so that fabric can check to make sure column headers are correctly formatted.
+
+After a test file has been uploaded, the **Column Mappings** section appears. For each column in your file, you can map it to the closest available attribute. Use the Priority column to rank the Column Headers by importance.
+
+When you’re finished, click **Save Template**.
+
+#### Editing a Template
+
+To access a Template, find and click on it on the Templates page.
+
+Use the **Template Settings** menu to configure the template’s basic settings, like its Name, Data Type, and Direction. When finished, click the **Update Template** button.
+
+The Template Mappings menu allows you to review the template columns. To edit an existing Column Header, click on its title. In the Edit Template Mapping: Style Name popup that appears, you can make changes to the Column Header Name, Platform Attribute, Target, Priority, and choose whether the column is required. When you’re finished with your changes, click **Save**.
+
+Click the Add Mapping button at the top-right of the Template Mappings section to create a new column for the template. Fill out the Column Header Name, Platform Attribute, Target, Priority, and choose whether the column is required. When you’re finished, click **Save**.
+
+## Shipping Accounts
+
+Create and manage Shipping Accounts
+
+#### Adding a Shipping Account
+
+To add a new shipping account, click on the **Add Shipping Account** button. In the popup that appears, give shipping account a nickname, use the **Carrier** dropdown menu to select a shipping provider, and then click **Save & Continue**.
+
+## Subscriptions
+
+Configure subscriptions and review available resources.
+
+The Subscriptions page shows an overview of RevCascade’s tiered subscription plans. Click the Subscribe button to open the payment portal in a new window.
+
+## Terms of Service
+
+Review the Terms of Service from fabric Marketplace.
+
+Click on the fabric Marketplace Supplier Agreement link to open a PDF of the Terms of Service in a popup window.

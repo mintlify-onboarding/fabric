@@ -1,0 +1,50 @@
+---
+title: "Inventory"
+description: "See the stock of goods across locations all in one spot"
+---
+
+## Introduction
+
+The Inventory page shows a list of all the items in your inventory across all locations, with numbers that provide a quick look at the total quantity of each item that is Available to Purchase, Available to Backorder, and Available to Preorder. Click on the column headers to sort the information the inventory page displays.
+
+## Importing Inventory
+
+The **Import** button at the top of the page allows you to upload inventory information in a CSV file. Clicking the button opens the Import CSV file modal. It is highly recommended that you download one of the template files to use as a guide. Click on a template button to begin the download process.
+
+* **Template: Overlay** overrides inventory levels by “counter” in the fabric Orders inventory database.
+* **Template: Inventory Update** upgrades “root” values in the Inventory Record including Preorder date, Backorder date, Low stock level, and Safety stock level.
+
+**Step 1: Choose upload type to import**
+
+Select the type of file you’re uploading. The option you choose should match the type of template you downloaded, either **Overlay** or **Inventory Update**.
+
+**Step 2: Click the button to add your file or simply drag and drop it**
+
+Click the button to open the file selector or drag the file from your computer and drop it in the uploader.
+
+Any CSV file you upload must match the following headers and corresponding data formats with no blank spaces, returns, line breaks, or other characters. Not following the parameters in the templates will result in errors when uploading. 
+
+* SKU - Unique identifier for the product or item.
+* Total Quantity - The total amount of product.
+* Reserved Quantity - For first upload, this must be zero "0". For subsequent updates, use the reserved number from the inventory item details page.
+* Location ID - Warehouse ID.
+* Type - This can be either "Stock" or “Transit” if the inventory is in transit.
+* Channel ID - The channel ID must be either "12" (USA Web) or "13" (Canada Web).
+* Transit Ref - The transit reference number.
+* Transit Order Date - The transit order date in UTC Format (yyyy-mm-ddThh:mm:ss.sssZ). This date must be prior to the Transit Stock Date.
+* Transit Stock Date - The transit stock date in UTC Format (yyyy-mm-ddThh:mm:ss.sssZ).
+
+**Notes**:
+
+* Inventory cannot be updated at the individual level in Copilot at this time. Inventory must be added through .CSV file import.
+* Some of the fields supported in the template, attributes and counters, are configurable by tenant, so the bulk upload will accept columns for attributes and counters depending on the tenant configuration.
+
+### Inventory Detail
+
+Click on an item in your inventory to visit the Inventory Detail page, where you can see how that item’s stock is allocated across your locations.
+
+The **Location** and **Channel** dropdowns allow you to see the number of that item you have onHand, allocated, and shipped.
+
+Click on the **Other Attributes** tab to edit details about the item, including the Inventory Type, Lead Time, and more. 
+
+After you make your changes, click the **Save** button at the top-right of the page.

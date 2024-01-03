@@ -1,0 +1,56 @@
+---
+title: "Adding a Number Only Attribute"
+---
+
+### Overview
+
+Number attributes allow you to add number-based information about an item. Use this attribute type when the value is always a number.
+
+### Prerequisites
+
+Ensure you have administrator privileges to fabric Products. For more information, see [Role-Based Access Control](/docs/role-based-access-control).
+
+### Procedure
+
+1. In the left menu, click **Products > Attributes > Product**.  
+The **Product Attributes** page is displayed.
+2. Click **New Attribute**.  
+The **Create product attribute** page is displayed.
+3. Select **Number Only**.
+4. In the **Attribute title** filed, enter a name for the attribute.
+5. (Optional) In the **Description** field, enter a description for the attribute.
+6. In the **Use JavaScript formula to calculate value** field, select one of the following:  
+   * **Yes**: Specifies that the value for the attribute is calculated using the JavaScript formula that you provide in the **Calculation formula** field. An example of a JavaScript formula is `(async () => await attribute('id') *10)()`. When you select **Yes**, the **Calculation formula** and **Allow manual overwrite** fields are displayed. Do the following to complete the settings:  
+         1. In the **Calculation formula** field, enter a JavaScript formula.  
+         2. In the **Allow manual overwrite** field, choose one of the following:  
+                  * **Yes**: Specifies that you can manually overwrite the attribute value. When the **Use JavaScript formula to calculate value** setting is enabled, the system determines the value based on your provided formula. However, if you enable the manual overwrite option, you can replace the system-calculated value with a custom value during product attribute setup. For more information, see the [Adding an Item](/docs/products-adding-item) section.  
+                  * **No**: Specifies that you cannot manually overwrite the attribute value. This is the default setting.  
+   * **No**: Specifies that the attribute value is not calculated using a JavaScript formula.
+7. In the **Validations** field, select one of the following:  
+   * **None**: Specifies that no custom validation is required for the attribute. This is the default setting.  
+   * **Common**: Specifies that the attribute value must fall within a certain range. When you select **Common**, the **Minimum** and **Maximum** fields are displayed. Do the following to complete the settings:  
+         1. In the **Minimum** field, enter a value.  
+         2. In the **Maximum** field, enter a value.  
+   * **Custom JavaScript**: Specifies that the JavaScript you enter in the **Validation formula** field is used to validate the attribute.  
+   The **Validation formula** field is displayed.  
+         * In the **Validation formula** field, enter a JavaScript validation formula.
+8. In the **Do you want this attribute to accept decimal values?** field, select one of the following:  
+   * **Yes**: Specifies that the field does accept decimal values.  
+   * **No**: Specifies that the field does not accept decimal values.
+9. In the **Is this attribute mandatory?** field, select one of the following:  
+   * **Yes**: Specifies that the attribute is mandatory when creating an item.  
+   * **No**: Specifies that the attribute is not mandatory when creating an item. This is the default selection.
+10. Click **Save**.
+
+The number only attribute with the specified settings is created.
+
+### Related Topics
+
+* [Product Attributes Overview](/docs/product-attributes-overview)
+* [Adding a Text Attribute](/docs/products-adding-text-attribute)
+* [Adding a Date Attribute](/docs/products-adding-date-attribute)
+* [Adding a Boolean Attribute](/docs/products-adding-boolean-attribute)
+* [Adding a List of Values Attribute](/docs/adding-a-list-of-values-attribute)
+* [Adding a Serial Attribute](/docs/products-adding-serial-attribute)
+* [Importing Product Attributes](/docs/products-importing-product-attributes)
+* [Managing Product Attributes](/docs/products-managing-product-attributes)

@@ -1,0 +1,61 @@
+---
+title: "Importing Product Attributes"
+---
+
+### Overview
+
+Product attributes are specific product descriptors that define characteristics such as size, color, or material. This document covers the process of importing multiple product attributes using a CSV file. You also have the option to add product attributes manually. 
+
+### CSV File Guidelines
+
+Product attributes can be imported using CSV files exclusively, as fabric does not support other data or file formats. Here are some essential points to keep in mind:
+
+* The headers in the first row of the CSV file should match the attribute titles.
+* While attribute titles are not case-sensitive, maintaining case consistency with the original attribute titles is recommended.
+* Empty rows and columns are ignored.
+* We recommend downloading the template file to serve as a guide when creating your own CSV file for import, minimizing errors during the process.
+
+### Attribute Data Formatting
+
+When preparing your CSV file for import, ensure that the product attribute data format aligns with the column requirements. Different columns have specific data input requirements:
+
+* **Attribute Title:** The name of the attribute.
+* **Type of Attribute:** The type of the attribute such as text, number, date, Boolean, serial, or list of values.
+* (Optional) **Description:** Details about the attribute.
+* **Decimal:** Indicates whether the attribute allows decimal values. The options are **true**, which indicates that the attribute allows decimal values, and **false**, which indicates that only whole numbers are accepted. This setting is relevant only for number-type attributes. The default value is **true**.
+* (Optional) **Min**: The minimum value for attribute validation. This setting is relevant for number-type attributes only.
+* (Optional)**Max**: The maximum value for attribute validation. This setting is relevant for number-type attributes only.
+* **Date Format:** The date format, such as MM/DD/YYYY, MM-DD-YYYY, DD/MM/YYYY, DD-MM-YYYY, YYYY/MM/DD, and YYYY-MM-DD. This field is mandatory for date-type attributes. Without a format, the attribute will not be imported.
+* (Optional)**Calculation Formula**:The JavaScript formula to calculate attribute values.
+* (Optional)**Validations Formula**: The JavaScript formula to set business validations on attribute values.
+* **Mandatory:** This field defines whether the attribute is mandatory or optional. Acceptable values are true and false.
+* **Start With**: The starting serial number. This setting is only applicable for serial-type attributes.
+* **Increment by:** The increment size for the serial-type attribute.
+* **Options Select Type (List of Value):** Required to create a list of values-type attribute. Acceptable values in this column are true and false. Use the Value 1, Value 2, Value 3 columns to the right to provide the value options. You can add more columns following the same pattern.
+
+### Prerequisites
+
+Ensure that you have access to fabric Products in Copilot.
+
+### Procedure
+
+1. In the left menu, click **Products** \> **Attributes** \> **Product**.  
+The Product Attributes page is displayed.
+2. Click **Import**.  
+The Import CSV file window is displayed, providing a link to download an example template for the CSV file.
+3. To import a CSV file, choose one of the following options:  
+   * Drag and drop the CSV file into the window.  
+   * Click Select a File from your computer.  
+   * Click **Import file**.  
+   The CSV file is imported, and the product attributes are added.
+
+### Related Topics
+
+* [Product Attributes Overview](/docs/product-attributes-overview)
+* [Adding a Text Attribute](/docs/products-adding-text-attribute)
+* [Adding a Number Only Attribute](/docs/products-adding-number-attribute)
+* [Adding a Date Attribute](/docs/products-adding-date-attribute)
+* [Adding a Boolean Attribute](/docs/products-adding-boolean-attribute)
+* [Adding a List of Values Attribute](/docs/adding-a-list-of-values-attribute)
+* [Adding a Serial Attribute](/docs/products-adding-serial-attribute)
+* [Managing Product Attributes](/docs/products-managing-product-attributes)

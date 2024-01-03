@@ -1,0 +1,75 @@
+---
+title: "Promotions"
+description: "Create member rewards"
+---
+
+> ## ❗️
+> 
+> Member is now called Loyalty
+> 
+> Some of fabric's products are undergoing name changes. Member is becoming Loyalty, but you may see the old name in some places as we make the transition.
+
+## Introduction
+
+Promotions allows you to create a series of “if this, then that” rules in order to give loyalty members rewards. Some brief examples of the promotions you can build include:
+
+* 10% off when members shop on their birthday
+* holiday shopping discounts for members during the month of November
+* free shipping for platinum members
+* bonus points when members spend $100 on Memorial Day
+
+## Creating a Promotion
+
+Click the **Add Promotion** button at the top of the Promotions main page and fill out the following information on the Promotion builder page:
+
+* Title - the name of the promotion
+* Promotion ID - a unique identifier you can use to distinguish the promotion from other promotions you have created
+* Promotion Duration - the promotion’s start and end dates
+* Rule Builder - use the visual Rule Builder to create “if this, then that” rules for the promotion. See the next section titled **Rule Builder** for an in-depth look
+
+When you’re finished, click the **Submit** button at the top-right of the page.
+
+## Rule Builder
+
+The Rule Builder is a drag-and-drop interface that lets you configure promotion rules visually.
+
+At the very top of the Rule Builder is the Promotion Type drop-down menu to select the kind of promotion you’re running, whether Earn, Burn, Enroll, or Discount. This means that once a loyalty member meets the criteria you define in the Rule Builder, they will:
+
+* Earn - earn loyalty points
+* Burn - be able to redeem loyalty points
+* Enroll - become a member of your program
+* Discount - receive a discount
+
+**Rule Blocks**
+
+At the top-left of the Rule Builder there are two buttons; one labeled Logic, the other matching the selection you made in the Promotion Type drop-down menu.
+
+Clicking on the Logic menu or the menu below it will reveal a number of rule blocks.
+
+Clicking on a rule block will add it to the design space for you to customize.
+
+To the right is the main design space where you configure your rules.
+
+To delete a rule block you’ve added, click on it to select it, and then click the trash icon in the bottom right.
+
+**Logic**
+
+The Logic menu has two rule blocks that serve as the basis for all rule building.
+
+* **if/do** \- The if/do block allows you to create conditional promotion rules when you connect other blocks to it. For example, you could give members 10% off on their birthday by attaching the **birthday=true** block to the first spot and the **discount=%** block to the second spot. By clicking on the settings icon in the if/do block, you can add **else if** and **else** statements to your rules.
+* **and** \- Joins two rule blocks together. Use the dropdown menu to choose between **and** or **or**. If two rule blocks are joined by **and**, a member must meet the criteria in both statements in order be eligible for the promotion. If two rule blocks are joined by **or**, a member only has to meet one of the criteria.
+
+**Operators**
+
+Depending on the type of promotion you’re designing and the blocks you select, you will see different options for a near-infinite combination of possibilities. However, the majority of attributes have two things in common: an **operator** and a **variable**.
+
+Operators are usually found under the left-most drop-down menu in a rule block. They allow for **equals to** and **greater/lesser than** statements:
+
+* \== - the value on the left is equal to the value on the right
+* != - the value on the left is not equal to the value on the right
+* \>= - the value on the left is greater than or equal to the value on the right
+* <= - the value on the left is less than or equal to the value on the right
+
+**Variables**
+
+Like operators, variables are selected from drop-down menus within individual blocks. Variables differ block-to-block, so depending on the blocks you select, you’ll have different customization options available.

@@ -1,0 +1,264 @@
+---
+title: "Coupons"
+description: "Create codes that customers can enter at checkout to receive a discount"
+---
+
+## Introduction
+
+The Coupons tab displays a list of your coupons with controls to search and sort and a **Create new** button at the top right.
+
+Use the search bar to find specific coupons. Results will auto-populate as you type. 
+
+## Setting up a Coupon
+
+From the Coupons menu, click **Create coupon** to create a new coupon, or click on an existing coupon’s title to edit it. Both options direct you to the **Edit coupon** screen to complete the following sections.
+
+### Coupon details
+
+* Coupon title - enter a name for the coupon. This will be displayed in the list of coupons on the main Coupons menu.
+* Start and End dates and time - the date and time range the coupon is valid.
+* Coupon usage  
+   * Multiple-use coupons can be redeemed repeatedly without restriction. Use the Coupon code field to enter the code customers will need to use at checkout in order to receive the discount (e.g. SPRINGSALE20).  
+   * Single-use coupon codes can only be redeemed once. Fill out the Prefix, Starting number, and Total coupon count fields, and click the Generate Codes link. fabric will use the information you provided to create a series of unique coupon codes. For example, say you fill out the fields with the following information:  
+         * Prefix - SPRING  
+         * Starting number - 200  
+         * Total coupon count - 10fabric would generate 10 coupons: SPRING201, SPRING202, SPRING203, etc. The codes Offers creates will be available for download from the coupon listing page.
+* Price list selection  
+   * All - the coupon will apply to all eligible SKUs on all eligible price lists.  
+   * Select price list - the coupon will only apply to eligible SKUs from the price lists you select. (Each price list selected must have the same currency)
+* The specific price types (Base & Sale) from the price list can be selected to enable discounts on sale prices or prevent over-discounting on sale prices.  
+   * Both Sale & Base Price - the discount will be applied if either price type is being used  
+   * Sale Price - the discount will ONLY be applied if the Sale price is used and passed to Offers  
+   * Base Price - the discount will ONLY be applied if the Base price is used and passed to Offers
+
+### Coupon Stacking
+
+Coupons have four different settings to control how they stack (combine) with other discounts running: **Stackable**, **Exclusive**, **Type Exclusive**, and **Universal**.
+
+**Stackable** 
+
+The Stackable setting allows the coupon to stack with any other discount, except for those set to exclusive. The discounts “stack” on top of each other, increasing the total discount amount if the discounts apply to the same item(s) in the cart. Stackable coupons require a priority. The priority defines the order in which stackable coupons are evaluated. Starting with priority 1, coupons are evaluated and applied in ascending order.
+
+Use the Stacking Priority dropdown to select the coupon’s priority.
+
+Priority 1 uses the price list price to apply the discounts to the target (product/cart). Priority 2 coupons are evaluated with their applicable discounts stacked on top of the discounted price from priority 1 coupons. Evaluation continues until all stackable priorities have been evaluated and applied.
+
+**Exclusive** 
+
+The Exclusive setting means a coupon cannot be combined with other discounts (except Universal). Only one non-stackable coupon will be applied to the cart, even if other items would be eligible. This is considered “Globally” exclusive. In these cases, Offers will apply the coupons with the largest monetary discount to the customer’s cart. If two coupons have the same monetary discount amount, the most recently published coupons will be applied.
+
+**Type Exclusive**
+
+This setting prevents coupons of the same type from being stacked. There are three types based on the discount target:
+
+* Product - Coupon types that discount products with $ off, % off, fixed price, typically these types SKUs, SKU quantity, Buy/Get SKU
+* Order - Coupon types that discount part of or the entire cart, e.g., Buy/Get Cart.
+* Shipping - Coupon types that discount shipping, e.g., SKU - Shipping, Buy/Get Shipping
+
+**Universal**
+
+This setting is used when you always want a coupon evaluated and applied (if it qualifies). These discounts are applied last and can stack on any other coupon regardless of its stacking setting.
+
+### SKU selection
+
+Products can be included or excluded from coupons using several criteria. 
+
+The first step is to set the inclusion criteria by first selecting the product target. Based on the criteria selected, products will be included in the coupon scope. 
+
+* ALL SKUs - All products in your catalog are eligible for the coupon
+* SKUs - Select a specific list of products from your catalog
+* Category - Select specific categories from your product catalog. Products assigned to these categories will be included in the coupon.
+* Bulk Upload SKUs - upload a specific list of products from your catalog
+
+Please note: 
+
+* Global exclusions continue to be considered regardless of coupon-specific rules.
+* Browse/Select SKU and Upload SKU are only enabled if the ‘OR’ condition is selected
+* If multiple values are selected in Category, Collection, or Attribute, these are treated as an ‘OR’ where only one must be true for the products to match the conditions.
+
+Next, select the condition that can be used to decide how the criteria for inclusions interact. 
+
+* AND = ALL conditions must be met for the coupon to qualify
+* OR = Only ONE of the criteria must be met for the coupon to qualify
+
+Finally, you can exclude a subset of products. 
+
+* ALL SKUs - All products in your catalog are eligible for the promotion or coupon
+* SKUs - Select a specific list of products from your catalog
+* Category - Select specific categories from your product catalog. Products assigned to these categories will be included in the coupon.
+* Bulk Upload SKUs - upload a specific list of products from your catalog
+
+Please note:
+
+* Global exclusions continue to be considered regardless of coupon-specific rules.
+* Browse/Select SKU and Upload SKU are only enabled if the ‘OR’ condition is selected
+* If multiple values are selected in Category, Collection, or Attribute, these are treated as an ‘OR’ where only one must be true for the products to match the conditions.
+
+### Coupon type
+
+**Coupon is applicable on** has three buttons to select the whether the coupon applies to:
+
+* Specific SKU(s)
+* A customer’s Cart Value
+* The Quantity of items in a customer’s cart
+
+Use the **Add Notes** section to jot down any important information while creating or updating a coupon. The notes section has a character limit of 100\. Changes to the notes section replace prior versions of the notes. Prior versions of the notes are not saved for retrieval.
+
+## SKU(s) coupons
+
+Use the Coupon type drop-down menu in conjunction with the Value field to choose whether the coupon will give the customer a Percentage off, an Amount off, or a discount applied to the shipping costs with Shipping off. Percent off and Amount off are applied individually on all the valid SKUs in the cart.
+
+When **Shipping off** is selected, the **Shipping type** and **Shipping-Coupon-type** drop-down menus appear. 
+
+Use the Shipping-coupon-type drop-down menu to choose between Percentage off, Amount off, or Free. The Value field will change based on selection to allow for a percentage, dollar amount, or disappear, respectively. 
+
+Each fabric customer account can be configured to further discount the SKUs with clearance prices. Consult with your fabric representative to set up this custom configuration. 
+
+## Quantity coupons
+
+Enter a number in the Minimum quantity of SKUs field to set the minimum number of items the customer must have in their cart before being eligible for the coupon. 
+
+Use the Coupon type drop-down menu in conjunction with the Value field to choose whether the coupon will give the customer a Percentage off or an Amount off.
+
+The **Add another tier** feature allows you to create progressive coupons based on increasing minimum cart value thresholds. An example of a tiered coupon would be as follows
+
+* 10% discount once the cart reaches 3 items
+* 15% discount once the cart reaches 4 items
+* 20% discount once the cart reaches 5 items
+
+Click the Add another tier button to add a tier and its corresponding Delete button to remove the tier. You can create up to six tiers.
+
+### Most Expensive/Cheapest Item Discount Application
+
+You can optionally specify to ONLY apply a discount to the most expensive or cheapest product in a customer’s cart, rather than all of the eligible items.
+
+This setting is available for the following discount types:
+
+* Percentage off
+* Amount off
+* Fixed price
+* Free
+
+It cannot apply to shipping discounts.
+
+## Buy X Get Y Coupons
+
+Buy X Get Y coupons allow you to discount products based on customers purchasing them in a bundle or spending over a minimum amount. The most common use is for “Buy one, get one” coupons.
+
+### Customer buys
+
+There are three options:
+
+* SKUs - This allows you to choose alternative sets of SKUs. A customer must purchase the required quantity from at least 1 SKU set.
+* Bundle - This allows you to choose multiple sets of SKUs. A customer must purchase the required quantity from all SKU sets.
+* Cart Value - This lets you set a minimum amount that the customer must spend in order to get a discount on a specific SKU. You will not use ‘SKU sets’ for this option. Instead, you can select SKUs that will be included in the total spend amount.
+
+Use **Browse SKUs**to select the SKUs in the SKU set and enter the minimum quantity of SKUs that must be added to the cart.
+
+Use **\+ Add another set of SKUs** to display an additional section for adding SKUs.
+
+Each SKU set will be labeled with a letter as an identifier, starting from A and going in alphabetical order.
+
+You must select the SKUs and the minimum quantity before you can move onto ‘Customer Gets.'
+
+### Customer Gets
+
+Choose the discount the customer will receive.
+
+* SKU - This option allows you to choose specific SKUs to be discounted. You can also specify if you would like to give an item for ‘free’.
+* Cart - This option allows you to discount the total cart value by an amount or percentage.
+* Shipping - This option allows you to discount the shipping cost. You will be able to select shipping methods that you have configured in fabric Orders.
+
+For the SKU option, you can select a set of SKUs that can be discounted. You can choose the same set you created before in the ‘customer buys’ section, or you can choose to create a new SKU set by clicking on **\+ Add another set of SKUs**.
+
+Then choose the maximum quantity that can be discounted and how much they should be discounted by.
+
+You can add additional sets of SKUs to be discounted by selecting **\+ Add another discount**. All SKU sets will be included when calculating the discount.
+
+### Discount type
+
+There four discount types:
+
+* **Percentage off** \- Reduces the price of the items, cart, or shipping by a percentage. The percentage value can be from 1-100%.
+* **Amount off** \- Reduces the price of the items, cart, or shipping by a specific monetary amount. The currency of the discount is determined by the price list the coupon is linked to. The value of the amount can be from 1 to the total price. If the amount off exceeds the the price, the price becomes zero.
+* **Shipping off** \- Reduces the price of the chosen shipping method by either a percentage or amount, with an additional option of setting it as “free,” which is equivalent to a 100% discount.  
+   * **Shipping methods** \- Offers uses the shipping methods that have been configured in Orders. Therefore, you will need to use Orders to apply shipping discounts. You can select multiple shipping methods but only apply a single discount type. You can create a separate coupon to apply different discount types for different shipping methods.
+* **Fixed price** \- Sets a price for the items, cart, or shipping. The currency of the set price is based on the price list the coupon is linked to. It is not available for Cart Value coupons. When used on Buy X, Get Y coupons, the fixed price will be set per unit of the chosen items on the Get side.
+
+### Most/Least Expensive Item Discount Application
+
+You can optionally specify to ONLY apply a discount to the most or least expensive product in a customer’s cart, rather than all of the eligible items.
+
+This setting is available for the following discount types:
+
+* Percentage off
+* Amount off
+* Fixed price
+* Free
+
+It cannot apply to shipping discounts.
+
+## Dynamic Discounts
+
+Dynamic discounting allows coupons to have variable discount amounts to prevent over-discounting when coupons stack. For example, if one coupon discounts an item or cart by 40%, you can limit a subsequent discount to 10%.
+
+Use the toggle button to turn dynamic discounts on or off. 
+
+The If no discount already exists field allows you to set the maximum percentage off of the first applicable discount. 
+
+The If discount already exists field allows you to set the maximum percentage off of any subsequent applicable discounts. 
+
+Dynamic Discounts can be set on SKU or SKU Quantity coupons including:
+
+* Percentage off
+* Amount off
+* Shipping off
+* Fixed price
+
+Dynamic Discounts are not eligible for Buy/Get or Spend/Get coupons.
+
+## Coupon Limits
+
+There are two ways to limit coupon use: per user and site-wide. 
+
+Limiting coupons on a per-user basis allows you to choose how many times an individual redeems the coupon. This feature requires everyone redeeming the coupon to be registered and signed in to your web store. 
+
+Limiting coupons site-wide allows you to choose how many times a coupon can be redeemed in total, by any user. 
+
+These features can be used individually or in conjunction with each other for more control. For example, you may set a site-wide coupon limit at 100\. To prevent one person from repeatedly using the coupon, you can also limit usage on a per-user basis, and set per-user redemption to one or two. 
+
+## Customer Segments
+
+Offers lets you target coupons at specific groups of customers. However, before targeting a customer segment, you must first [create a customer segment in Offers Settings](/docs/offers-settings#customer-segments).
+
+After you have created a customer segment, you can target that segment with coupons.
+
+* Target audience - choose whether the coupon will apply to:  
+   * All - the coupon will be available to all shoppers.  
+   * Segment - the coupon will be available to shoppers within the segment you have identified.
+* Segment name - Select the segment you wish to link to the coupon.
+* Segment values - The values will be populated here. You can choose to select specific values that you want to link to the coupon.
+
+You can add multiple segment types by clicking on ‘+Add another segment.’
+
+**Please note:**
+
+The segment values will be ‘printed’ on the coupon once it is created:
+
+* If you delete a segment from settings, the segment value on the coupon will remain to maintain the state of the coupon that was live.
+* You can edit segment values on a coupon by editing the coupon itself.
+* If a segment is no longer supported, the coupon is unlikely to be applied as Storefront and Cart are required to identify the segment and use it when applying coupon.
+* If a segment is no longer supported, the coupon is unlikely to be applied as Storefront and Cart are required to identify the segment and use it when applying coupon.
+
+#### Excluding a Segment
+
+Segments can be excluded from coupons. To do this, first specify the included target audience, either "All" or a specific segment/value combination. Next, click on the **+Add exclusion list** link under the Exclude Segments subsection and add the details.
+
+* Segment name - Select the segment you wish to exclude from the coupon.
+* Segment values - The values will be populated here. Select specific values that you want to link to the coupon and exclude.
+
+You can add multiple segments to exclude by clicking on **+Add another segment**.
+
+## Define Terms & Conditions (optional)
+
+The title and description fields provide space for the coupon’s terms and conditions, if any. The Add another condition feature allows you to expand the terms and conditions. Click the Add another tier button to add a tier and its corresponding Delete button to remove the tier.

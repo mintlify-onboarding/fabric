@@ -1,0 +1,60 @@
+---
+title: "Settings"
+---
+
+## Introduction
+
+To manage price lists, global exclusions, and customer segments, click on the **Settings** menu under Offers in the left-hand navigation.
+
+### Price Lists
+
+Price lists is the default view when accessing the Offers Settings menu. 
+
+For a new price list, enter a name under Price List Name and then click the **Add price list** button. 
+
+The new price list you create will be listed along with other existing prices lists under Manage Price List. Use the buttons at the left to choose which price list is set as the Default List. 
+
+The Default Price List serves as the master price list in cases of conflicting prices. For example, if you have a single SKU that appears at different prices on five different price lists, the SKU’s price as it appears in the Default Price List will be shown. 
+
+Sort price lists by clicking on the arrow next to Price List ID. To change a Price List Name, click on its corresponding pencil icon and enter a new name. Click the checkmark to save or the X to cancel.
+
+### Global exclusions
+
+Global Exclusions allows you to protect SKUs from being discounted by active promotions.
+
+To set up Global exclusions, select **Global exclusions** from the Settings menu and click the **Create exclusion list** button.
+
+* Give the list a title
+* Set the start and end dates/times. This sets the duration that the SKUs in the list will be protected from discounts.
+* Set whether you want the SKU price, Shipping price, or both to be protected  
+   * SKU price - This protects the SKU’s price from being discounted  
+   * Shipping price - This will ensure that the shipping price is applied during checkout for this SKU.
+* Select the SKUs to be excluded from discounts  
+   * Bulk upload - Use a CSV file to import SKUs  
+   * Browse SKUs - Browse SKUs that are in your PIM and select
+* Click **Save**
+
+To edit a Global exclusion list, mouse over the list and click on the edit icon that appears. Make your changes, and then click save.
+
+To delete a Global exclusion list, mouse over the list, click on the delete icon that appears, and then click **confirm** in the dialog box.
+
+### Customer segments
+
+Offers allows you to target promotions at specific groups of customers. You will need to first segment your customers through one of the following options:
+
+* Use of a third-party segmentation tool: There are many third-party tools available that will group your customers by their traits and behaviors. Once grouped, they will be given a group identifier that can be stored with the customer’s profile.
+* Customization of your online store: You can use information from the browser to do simple segmentation by the customer's device type and location.
+* Customer tagging: You can store custom traits to customer profiles that can then be added to our segmentation configurations.
+
+Once customers are in a segment, a customer on your online store will need to have their segment identified and submitted when checking for eligible promotions from Offers. Their segment can be identified using a third-party segmentation tool plugin, the browser, or by checking the customer's profile if they are logged in. Their segment ID will need to be added to the user Profile section of the promotion evaluate request. 
+
+**Creating a Customer Segment**
+
+To set up Customer segments, select **Customer segments** from the Settings menu and click the **Create Segment** button.
+
+* Segment name - Enter a name for your segment type.
+* Segment values - You can create multiple options within a segment type. Enter a value and press enter to save it.
+
+**Linking a Customer Segment to a Promotion**
+
+Once you have created a customer segment in Offers Settings, take the steps in the [Offers Promotions document](/docs/offers-promotions) to link the customer segment to a promotion.

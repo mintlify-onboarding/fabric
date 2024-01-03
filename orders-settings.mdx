@@ -1,0 +1,134 @@
+---
+title: "Settings"
+description: "Create tailored checkout offers, fulfillment rules, and shipping options"
+---
+
+> ## ❗️
+> 
+> OMS is now called Orders
+> 
+> Some of fabric's products are undergoing name changes. OMS is becoming Orders, but you may see the old name in some places as we make the transition.
+
+## Attributes
+
+The Attributes menu lets you create a range of custom attributes that can be applied to Orders, Invoices, Locations, Networks, and more. For example, you could create a custom attribute that would allow customers to select gift wrapping at checkout. 
+
+To navigate to the Attributes page, click on Settings in the left menu and then select **Attributes**. 
+
+The Attributes page shows a list of all Attributes you have created previously. You can edit or delete a previously created Attribute by hovering over its name in the list and clicking the pencil icon or trash can icon at the right.
+
+To create a new attribute, click the **Create Attribute** button at the top-right. 
+
+On the Create Attribute page, fill out the following information: 
+
+* Attribute name: give the attribute a name
+* Mandatory attribute: use the checkbox to choose whether or not the attribute is mandatory
+* Select the Data type:  
+   * Boolean for attributes with yes/no or true/false options  
+   * String for an attribute that will contain characters like a message for gift wrapping  
+   * Double for a pair of fields with a minimum and maximum value
+* Description (Optional): enter a short description for the attribute.
+* Section: choose where to add the attribute within the order process:  
+   * Location  
+   * Order  
+   * Network  
+   * Inventory  
+   * Shipment  
+   * Allocation  
+   * Invoice
+
+Depending on the selection you made in the Data type dropdown, you will have additional fields to configure. 
+
+Enter a value in the Default value field, or leave it set to “false” for no default value.
+
+## Shipment Methods
+
+The **Shipment Methods** menu has options to set up details like shipping costs, duration, freight options, and restrictions.
+
+To add Shipping information, first click on Settings in the left menu and then select **Shipment Methods**. On the Shipping and carriers page, click **Add Shipping** and fill out the following sections:
+
+**Basic Information**
+
+* Carrier name
+* Shipment cost: the shipping cost you charge the customer
+* Shipping description (optional): e.g.; "Guaranteed delivery by 9PM tomorrow"
+* Channel: US Web or CA Web
+* Shipment tax code: the code provided by your tax service
+
+**Carrier SLA**
+
+* Minimum days to deliver
+* Maximum days to deliver
+* Cut-off time: the daily deadline for a warehouse to process the last order
+
+**Freight options & Restrictions**
+
+* Minimum and maximum fields for an item’s weight, length, width, and height
+
+**Product Selection**
+
+Choose whether the Shipping and carrier rules apply to specific products only, or to a purchase’s entire cart value.
+
+* To specific products: use the Add Products button to select eligible products
+* Cart Value: enter a minimum and maximum cart value
+
+When you’re finished configuring the Add Shipping and Carrier attributes, click **Save** at the top-right of the page.
+
+## Backorder & Preorder
+
+The Backorder & Preorder menu allows you to configure settings for backorders and preorders. 
+
+Backorders are defined as orders for products that are not currently available for fulfillment, while preorders are for products that are not yet released. 
+
+To navigate to the Backorder & Preorder page, click on Settings in the left menu and then select **Backorder & Preorder**. 
+
+**Backorders**
+
+To allow backorders, click the **Allow Backorders** toggle. Once backorders are turned on, new options and fields appear below.
+
+Use the **Consent to delay should start** options to choose whether the customer’s consent to order a backordered item begins on the date the order was created or on the ship by date. 
+
+The following four fields allow you to control what happens if an order is backordered. For each field, enter a number or use the plus/minus buttons to adjust the number of days allowed.
+
+* In the first field, set the number of days past the promised order date/ship-by date before sending the first consent-to-delay notification to the customer.
+* In the second field, set the number of days past the promised order date/ship-by date before sending the second consent-to-delay notification to the customer.
+* In the third field, set the number of days to cancel the order if the customer does not respond to either of the first two notifications.
+* In the fourth field, set the number of days to cancel a backordered order, even if the customer had previously agreed to a consent-to-delay notification.
+
+**Preorders**
+
+To allow preorders, click the **Allow Preorders** toggle.
+
+## Policies
+
+The Policies menu allows you to define how your business process things like returns, cancellations, and exchanges. 
+
+To navigate to the Policies page, click on Settings in the left menu and then select **Policies**. 
+
+The Policies page shows a list of all Policies you have created previously. You can edit or delete a previously created Policy by hovering over its name in the list and clicking the pencil icon or trash can icon at the right. 
+
+To create a new policy, click the **Create Policy** button at the top-right of the page. 
+
+In the Basic Information section on the Create Policy page, fill out a name for the policy. 
+
+Use the Policy Type dropdown to choose the kind of policy this is, whether **Return**, **Cancellation**, or **Exchange**. 
+
+Use the channel dropdown to choose either **12** (USA Web) or **13** (Canada Web).
+
+**Return, Cancellation, or Exchange**
+
+Depending on the selection you made in the Policy Type dropdown above, the name of this section will change. However, the three fields it contains remain the same. 
+
+Use the +/- buttons or enter numbers in the **Days**, **Hours**, and **Minutes** fields to adjust how long customers have to return, cancel, or exchange an item. 
+
+**Refund Fee**
+
+The Refund Fee section allows you to set up things like restocking or repackaging fees. 
+
+Use the Currency dropdown to set the currency, and then enter a short description in the Fee type field and an amount in the Return fee field. 
+
+Click the **Add** button to add another type of fee. 
+
+**Reason Codes**
+
+The Reason Codes section allows you to create predefined reasons as to why the customer is returning their order (e.g. didn’t fit, wrong color, changed mind, etc.). Click the **Add reason code** button to add a reason code and enter a description (optional). Click **Save** when finished.

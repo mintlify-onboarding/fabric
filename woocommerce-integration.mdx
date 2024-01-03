@@ -1,0 +1,47 @@
+---
+title: "WooCommerce Integration"
+---
+
+> ## ❗️
+> 
+> Marketplace (Merchants) is now called Marketplace (Retailers)
+> 
+> Some of fabric's products are undergoing name changes. Marketplace (Merchants) is now Marketplace (Retailers), but you may see the old name in some places as we make the transition.
+
+## Initial Setup
+
+To access Integrations, click on your account name in the menu at the top of the page. In the dropdown that appears, select **Supplier Settings**. On the Supplier Settings page, find and click on the **Integrations** tile. 
+
+On the Integrations page, click on the **Add Integration** button at the top-right of the page. In the Add Integration popup that appears, click the **Add** button in the WooCommerce tile.
+
+You will be prompted to fill out your **WooCommerce Store URL**. When finished, click the **Add Integration** button.
+
+After successful authorization, WooCommerce will show up on the list of the integrations in the Integrations section of Marketplace.
+
+## Configuration
+
+On the Integrations page, find and click on the **Options** button to the right of the WooCommerce logo and select **Configuration** from the dropdown. The Configuration page allows you to make changes related to how order and transaction information is shared between Marketplace and WooCommerce.
+
+### Configure Webhooks
+
+Choose whether or not to enable webhooks for **Orders**, **Inventory**, or **Fulfillment**. 
+
+* **Orders:** With the orders integration enabled, fabric can automatically send purchase orders from your supplier partners directly to your WooCommerce account. Enabling this integration means that orders from ALL of your supplier connections in fabric will flow through this integration.
+* **Inventory:** Marketplace requires frequent inventory updates to reduce cancellations due to stockouts. The WooCommerce integration can sync inventory with Marketplace automatically. Turn this integration off if you would prefer to update inventory manually.
+* **Fulfillment:** Marketplace requires frequent order fulfillment updates to track orders. Our WooCommerce integration can sync order fulfillment with Marketplace automatically. Turn this integration off if you would prefer to update order fulfillment manually.
+
+**Note:** You can enable and disable these webhooks at any time.
+
+### Webhook History
+
+On the Integrations page, find and click on the **Options** button to the right of the WooCommerce logo and select **Webhook History** from the dropdown.
+
+The Webhook History page shows details of all the events that have been captured by Marketplace from your WooCommerce store:
+
+* **ID:** The ID of the webhook as captured by Marketplace.
+* **Topic:** The topic that was captured as part of the webhook.
+* **Status:** The status of the webhook (success or failure).
+* **Payload:** The data that was sent in the webhook payload.
+* **Received:** The timestamp of when the webhook was captured. This is in the user’s local time zone.
+
+Use the Filter feature at the top of the table to adjust the webhook information you see.

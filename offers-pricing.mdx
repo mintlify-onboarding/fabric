@@ -1,0 +1,56 @@
+---
+title: "Pricing"
+description: "Set and track the price of your products"
+---
+
+## Introduction
+
+Offers works in conjunction with the products you have uploaded into your fabric Products account. Offers automatically connects to Products and displays all of the products you have uploaded. 
+
+Pricing is the default menu in Offers. Selecting **Offers** from the left-hand navigation directs you to the Pricing menu. 
+
+### Add Bulk Price
+
+The **Add Bulk Price** button at the top-right allows you to upload a .CSV file with information including the cost, price, and clearance price. Clicking the button opens the Import .CSV file modal. It is highly recommended that you **download the template** as a guide. Not following the parameters in the guide will result in errors. 
+
+Any .CSV file you upload must match the following headers and format:
+
+* SKU ID - the SKU ID of the item in PIM
+* Cost - the cost of the item from the distributor
+* Price - the regular amount you charge customers to purchase the item
+* Clearance Price - the lowest amount you charge customers to purchase the item
+* Start Date - the date the price change begins. Dates must follow the YYYY-MM-DDTHH:MM:00.000Z format. For example, a price change scheduled for June 1, 2022 at noon would be 2022-06-01T12:00:00.000Z.
+* Price List Name - the name you assign to the price list
+
+You can check the status of your upload by clicking Import history. If there is an error in the file, Offers will flag the row with the error. When the upload is complete, you can download the .CSV file with the errors, correct them, and re-upload the file. Common errors you may encounter after you upload your version of the .CSV file include:
+
+* SKU ID not found: A SKU ID does not match the SKU of any product in your PIM account.
+* Headers do not match the price template headers: The headers do not match the headers in the template.
+* Only numeric and decimal values are allowed in cost: There is a character in the cost column that isn’t a number or decimal.
+* Incorrect date format for Start/End Date (UTC). Use this date format YYYY-MM-DDTHH:MM:00.000Z: There are dates that don’t match the correct format.
+* No price data found: There are no prices listed in the price columns.
+* Start Date(UTC)/Price is required: Data is missing from one of these two required fields.
+* Clearance price/Price/Cost price should always be >= 0.00: All data in these columns must be greater than 0.
+* Cost cannot be greater than its corresponding Price: The price (defined as the amount the merchant charges customers for the product) must be greater than the cost (the amount the merchant paid the supplier for the product).
+* Clearance price cannot be greater than or equal to its corresponding price: The amount listed in the price column must be greater than the amount listed in the clearance price column.
+* The header for an additional attributes column is not correctly formatted: Column names for additional attributes should follow this format: **additionalAttributes.exampleAttribute**. For example, an additional attributes column header could be additionalAttributes.customSkuTitle or additionalAttributes.customCategories.
+
+### Manual Price Editing
+
+To set up the cost, price, or clearance price of an individual item, first select the price list it's on by clicking on the **Price List** dropdown. Then find and click on the individual item to set the following pricing details:
+
+* Cost - optional
+* Price - the regular amount you charge customers to purchase the item
+* Clearance Price - optional
+* Start date and time - the date the cost/price/clearance price begins. Dates must follow the YYYY-MM-DDTHH:MM:00.000Z format. For example, if a price began on June 1, 2022 at noon, you would enter 2022-06-01T12:00:00.000Z.
+* End date and time - same logic as Start date and time; defaults to December 31, 2099.
+
+Please note that Offers supports up to five decimal places for price, cost, and clearance price values. 
+
+When finished, click **Add Price**.
+
+To bulk edit the cost and price attributes for all the different variations of a product (e.g., all colors, prints, sizes, etc.) edit the parent product. To change only the cost and price attributes for a single product (e.g., only the green jacket), find and edit the individual variant. 
+
+### View Modes
+
+Use the **List View** and **Tile View** buttons at the top-right of the page to change how the Pricing home page displays items. Tile View includes images but has less information, while List View has more information but no images.

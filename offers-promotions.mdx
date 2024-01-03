@@ -1,0 +1,259 @@
+---
+title: "Promotions"
+description: "Create discounts automatically applied to all customers' carts"
+---
+
+## Introduction
+
+The Promotions menu displays a list of your promotions with controls to search and sort and a **Create new** button at the top right.
+
+Use the search bar to find specific promotions. Results will auto-populate as you type. 
+
+## Setting up a Promotion
+
+From the Promotions menu, click **Create promotion** to create a new promotion, or click on an existing promotion’s title to edit it. Both options direct you to the Edit promotion screen to complete the following sections.
+
+### Promotion details
+
+* Promotion title - enter a name for the promotion. This will be displayed in the list of promotions on the main Promotion menu.
+* Start and End date and time - the date and time range the promotion is valid.  
+   * The End now button cancels an active promotion.
+* Price list selection  
+   * All - the promotion will apply to all eligible SKUs on all eligible price lists.  
+   * Select price list - the promotion will only apply to eligible SKUs from the price lists you select. (Each price list selected must have the same currency)
+* The specific price types (Base & Sale) from the price list can be selected to enable discounts on sale prices or prevent over-discounting on sale prices.  
+   * Both Sale & Base Price - the discount will be applied if either price type is being used  
+   * Sale Price - the discount will ONLY be applied if the Sale price is used and passed to Offers  
+   * Base Price - the discount will ONLY be applied if the Base price is used and passed to Offers
+
+### Promotion Stacking
+
+Promotions have four different settings to control how they stack (combine) with other discounts running: **Stackable**, **Exclusive**, **Type Exclusive**, and **Universal**.
+
+**Stackable** 
+
+The Stackable setting allows the promotion to stack with any other discount, except for those set to exclusive. The discounts “stack” on top of each other, increasing the total discount amount if the discounts apply to the same item(s) in the cart. Stackable promotions require a priority. The priority defines the order in which stackable promotions are evaluated. Starting with priority 1, promotions are evaluated and applied in ascending order.
+
+Use the Stacking Priority dropdown to select the promotion’s priority.
+
+Priority 1 uses the price list price to apply the discounts to the target (product/cart). Priority 2 promotions are evaluated with their applicable discounts stacked on top of the discounted price from priority 1 promotions. Evaluation continues until all stackable priorities have been evaluated and applied.
+
+**Exclusive** 
+
+The Exclusive setting means a promotion cannot be combined with other discounts (except Universal). Only one non-stackable promotion will be applied to the cart, even if other items would be eligible. This is considered “Globally” exclusive. In these cases, Offers will apply the promotions with the largest monetary discount to the customer’s cart. If two promotions have the same monetary discount amount, the most recently published promotions will be applied.
+
+**Type Exclusive**
+
+This setting prevents promotions of the same type from being stacked. There are three types based on the discount target:
+
+* Product - Promotion types that discount products with $ off, % off, fixed price, typically these types SKUs, SKU quantity, Buy/Get SKU
+* Order - Promotion types that discount part of or the entire cart, e.g., Buy/Get Cart.
+* Shipping - Promotion types that discount shipping, e.g., SKU - Shipping, Buy/Get Shipping
+
+**Universal**
+
+This setting is used when you always want a promotion evaluated and applied (if it qualifies). These discounts are applied last and can stack on any other promotion regardless of its stacking setting.
+
+### SKU selection
+
+Products can be included or excluded from promotions using several criteria. 
+
+The first step is to set the inclusion criteria by selecting the Product Target. Based on the criteria selected, products will be included in the promotion scope. 
+
+* ALL SKUs - All products in your catalog are eligible for the promotion or coupon
+* SKUs - Select a specific list of products from your catalog
+* Category - Select specific categories from your product catalog. Products assigned to these categories will be included in the promotion.
+* Bulk Upload SKUs - upload a specific list of products from your catalog
+
+Please note: 
+
+* Global exclusions continue to be considered regardless of promotion-specific rules.
+* Browse/Select SKU and Upload SKU are only enabled if the ‘OR’ condition is selected
+* If multiple values are selected in Category, these are treated as an ‘OR’ where only one must be true for the products to match the conditions.
+
+Next, select the condition that can be used to decide how the criteria for inclusions interact. 
+
+* AND = ALL conditions must be met for the promotion to qualify
+* OR = Only ONE of the criteria must be met for the promotion to qualify
+
+Finally, you can exclude a subset of products. 
+
+* SKUs - Select a specific list of products from your catalog
+* Category - Select specific categories from your product catalog. Products assigned to these categories will be included in the promotion.
+* Collection - Select specific collections from your product catalog. Products assigned to these collections will be included in the promotion.
+* Attribute - Select specific product attribute values. Products with these attributes will be included in the promotion.
+* Bulk Upload SKUs - upload a specific list of products from your catalog
+* Please note:  
+   * Global exclusions continue to be considered regardless of promotion-specific rules.  
+   * Browse/Select SKU and Upload SKU are only enabled if the ‘OR’ condition is selected.  
+   * If multiple values are selected in Category, Collection, or Attribute, these are treated as an ‘OR’ where only one must be true for the products to match the conditions.
+
+### Promotion type
+
+There are three types of promotions:
+
+* **SKU** \- A discount applied based on SKUs that are purchased.
+* **SKU Quantity** \- A discount applied after a certain quantity of SKUs are purchased.
+* **Buy X - Get Y** \- A discount applied on after a specific SKU or minimum amount is purchased.
+
+Use the **Add Notes** section to jot down any important information while creating or updating a promotion. The notes section has a character limit of 100\. Changes to the notes section replace prior versions of the notes. Prior versions of the notes are not saved for retrieval.
+
+### Promotion Limits
+
+Promotion limits allow you to set the maximum number of times a customer can receive a discount. For example, if you are running a “Buy one get one free” promotion, you could set a maximum limit of "3," which would mean that the customer would get three free items even if they had added four items to their cart.
+
+The default setting is "unlimited." To set a limit, use the toggle to enable promotion limits and then enter the maximum value.
+
+## SKU(s) promotions
+
+Use the Promotion type drop-down menu in conjunction with the Value field to choose whether the promotion will give the customer a **Percentage off**, an **Amount off**, or a discount applied to the shipping costs with **Shipping off**. 
+
+When **Shipping off** is selected, the **Shipping type** and **Shipping-Promotion-type** drop-down menus appear. 
+
+Use the Shipping-Promotion-type dropdown menu to choose between **Percentage off**, **Amount off**, or **Free**. The Value field will change based on selection to allow for a percentage, dollar amount, or disappear, respectively. 
+
+Each fabric customer account can be configured to further discount the SKUs with clearance prices. Consult with your fabric representative to set up this custom configuration. 
+
+## Quantity promotions
+
+Enter a number in the Minimum quantity of SKUs field to set the minimum number of items the customer must have in their cart before being eligible for the promotion. 
+
+Use the Promotion type drop-down menu in conjunction with the Value field to choose whether the promotion will give the customer a Percentage off or an Amount off.
+
+The **Add another tier** feature allows you to create progressive promotions based on increasing minimum cart value thresholds. An example of a tiered promotion would be as follows: 
+
+* 10% discount once the cart reaches 3 items with eligible SKUs
+* 15% discount once the cart reaches 4 items with eligible SKUs
+* 20% discount once the cart reaches 5 items with eligible SKUs
+
+Click the Add another tier button to add a tier and its corresponding Delete button to remove the tier. You can create up to six tiers.
+
+### Most Expensive/Cheapest Item Discount Application
+
+You can optionally specify to ONLY apply a discount to the most expensive or cheapest product in a customer’s cart, rather than all of the eligible items.
+
+This setting is available for the following discount types:
+
+* Percentage off
+* Amount off
+* Fixed price
+* Free
+
+It cannot apply to shipping discounts.
+
+## Buy X Get Y Promotions
+
+Buy X Get Y promotions allow you to discount products based on customers purchasing them in a bundle or spending over a minimum amount. The most common use is for “Buy one, get one” promotions.
+
+### Customer buys
+
+There are three options:
+
+* SKUs - This allows you to choose alternative sets of SKUs. A customer must purchase the required quantity from at least 1 SKU set.
+* Bundle - This allows you to choose multiple sets of SKUs. A customer must purchase the required quantity from all SKU sets.
+* Cart Value - This lets you set a minimum amount that the customer must spend in order to get a discount on a specific SKU. You will not use ‘SKU sets’ for this option. Instead, you can select SKUs that will be included in the total spend amount.
+
+Use **Browse SKUs** to select the SKUs in the SKU set and enter the minimum quantity of SKUs that must be added to the cart.
+
+Use **\+ Add another set of SKUs** to display an additional section for adding SKUs.
+
+Each SKU set will be labeled with a letter as an identifier, starting from A and going in alphabetical order.
+
+You must select the SKUs and the minimum quantity before you can move onto ‘Customer Gets.'
+
+### Customer Gets
+
+Choose the discount the customer will receive.
+
+* SKU - This option allows you to choose specific SKUs to be discounted. You can also specify if you would like to give an item for ‘free’. A ‘free’ item will be added to the response in the promotion evaluation API as a suggested item to be added to the cart.
+* Cart - This option allows you to discount the total cart value by an amount or percentage.
+* Shipping - This option allows you to discount the shipping cost. You will be able to select shipping methods that you have configured in fabric Orders.
+
+For the SKU option, you can select a set of SKUs that can be discounted. You can choose the same set you created before in the ‘customer buys’ section, or you can choose to create a new SKU set by clicking on **\+ Add another set of SKUs**.
+
+Then choose the maximum quantity that can be discounted and how much they should be discounted by.
+
+You can add additional sets of SKUs to be discounted by selecting **\+ Add another discount**. All SKU sets will be included when calculating the discount.
+
+### Discount type
+
+There four discount types:
+
+* **Percentage off** \- Reduces the price of the items, cart, or shipping by a percentage. The percentage value can be from 1-100%.
+* **Amount off** \- Reduces the price of the items, cart, or shipping by a specific monetary amount. The currency of the discount is determined by the price list the promotion is linked to. The value of the amount can be from 1 to the total price. If the amount off exceeds the the price, the price becomes zero.
+* **Shipping off** \- Reduces the price of the chosen shipping method by either a percentage or amount, with an additional option of setting it as “free,” which is equivalent to a 100% discount.  
+   * **Shipping methods** \- Offers uses the shipping methods that have been configured in Orders. Therefore, you will need to use Orders to apply shipping discounts. You can select multiple shipping methods but only apply a single discount type. You can create a separate promotion to apply different discount types for different shipping methods.
+* **Fixed price** \- Sets a price for the items, cart, or shipping. The currency of the set price is based on the price list the promotion is linked to. It is not available for Cart Value promotions. When used on Buy X, Get Y promotions, the fixed price will be set per unit of the chosen items on the Get side.
+
+**Please note:**
+
+* The cheapest eligible SKU will be discounted first. For example, if there are 3 SKUs eligible for a discount but a maximum quantity of 1, and the customer adds all 3 to their cart, we will apply the discount to the cheapest SKU.
+* The discount amount is applied to each unit. For example, if you have $10 off up to a maximum of 6 units, $10 will be discounted from each unit up to a total of 6 units.
+
+**Compatibility:**
+
+* Buy-Get must be used with fabric Cart V2.
+
+### Most Expensive/Cheapest Item Discount Application
+
+You can optionally specify to ONLY apply a discount to the most expensive/cheapest product in a customer’s cart, rather than all of the eligible items.
+
+This setting is available for the following discount types:
+
+* Percentage off
+* Amount off
+* Fixed price
+* Free
+
+It cannot apply to shipping discounts.
+
+## Dynamic Discounts
+
+Dynamic discounting allows promotions to have variable discount amounts to prevent over-discounting when promotions stack. For example, if one promotion discounts an item or cart by 40%, you can limit a subsequent discount to 10%.
+
+Use the toggle button to turn dynamic discounts on or off. 
+
+The If no discount already exists field allows you to set the maximum percentage off of the first applicable discount. 
+
+The If discount already exists field allows you to set the maximum percentage off of any subsequent applicable discounts. 
+
+Dynamic promotions can be set on SKU or SKU Quantity promotions including:
+
+* Percentage off
+* Amount off
+* Shipping off
+* Fixed price
+
+Dynamic Discounts are not eligible for Buy/Get or Spend/Get promotions.
+
+## Customer Segments
+
+Offers lets you target promotions at specific groups of customers. However, before targeting a customer segment, you must first [create a customer segment in Offers Settings](/docs/offers-settings#customer-segments).
+
+After you have created a customer segment, you can target that segment with promotions.
+
+* Target audience - choose whether the promotion will apply to:  
+   * All - the promotion will be available to all shoppers.  
+   * Segment - the promotion will be available to shoppers within the segment you have identified.
+* Segment name - Select the segment you wish to link to the promotion.
+* Segment values - The values will be populated here. You can choose to select specific values that you want to link to the promotion.
+
+You can add multiple segment types by clicking on ‘+Add another segment.’
+
+**Please note:**
+
+The segment values will be ‘printed’ on the promotion once it is created:
+
+* If you delete a segment from settings, the segment value on the promotion will remain to maintain the state of the promotion that was live.
+* You can edit segment values on a promotion by editing the promotion itself.
+* If a segment is no longer supported, the promotion is unlikely to be applied as Storefront and Cart are required to identify the segment and use it when applying promotions.
+* If a segment is no longer supported, the promotion is unlikely to be applied as Storefront and Cart are required to identify the segment and use it when applying promotions.
+
+#### Excluding a Segment
+
+Segments can be excluded from promotions. To do this, first specify the included target audience, either "All" or a specific segment/value combination. Next, click on the **+Add exclusion list** link under the Exclude Segments subsection and add the details.
+
+* Segment name - Select the segment you wish to exclude from the promotion.
+* Segment values - The values will be populated here. Select specific values that you want to link to the promotion and exclude.
+
+You can add multiple segments to exclude by clicking on **+Add another segment**.

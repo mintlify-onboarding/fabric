@@ -1,0 +1,42 @@
+---
+title: "Creating a User App"
+---
+
+### Overview
+
+A User App is a type of API app that uses fabric Identity to authenticate end users. A User App relies on the login page that fabric Identity hosts in order for end users to log in. It is suitable for e-commerce apps that direct their authentication and authorization needs to fabric Identity.
+
+Visit the [Concepts page](/reference/identity-developer-guide-concepts) to learn more about User Apps.
+
+### Prerequisites
+
+Ensure you have [admin or restricted admin](/docs/role-based-access-control) privileges to create a new user app.
+
+### Procedure
+
+1. In the left menu, click **Settings > Developer Tools**.
+2. Click **API Apps**.  
+The **API Apps** page is displayed.
+3. Click **Create API App**.  
+The **Create an app** page is displayed.
+4. In the **App name** field, enter the name of the application.
+5. (Optional) In the **Description** field, enter a description.
+6. In the **App type** field, select **User App**.  
+The User Pool, Usage Type, Redirect URL, and Logout URL fields appear.
+7. In the **[User Pool](/reference/identity-developer-guide-concepts#user-pools)** field, select default.  
+If you want to create a new user pool, contact [fabric Customer Support](https://support.fabric.inc/hc/en-us).
+8. In the **Usage Type** field, choose one of the following options:  
+   1. **Headless shopper authentication:** Supports a custom log in experience using fabric APIs.  
+   2. **Hosted log in:** Shopper must verify their identity by logging in through Okta.
+9. In the **Redirect URL** field, enter a URL to redirect the user to after successful authentication.
+10. In the **Logout URL** field, enter a URL to redirect the user to after logging out.
+11. Click **Create**.
+
+The new User App is created.
+
+### Related Topics
+
+* [API Apps](/docs/api-apps)
+* [Creating a System App](/docs/creating-system-app)
+* [Managing API Apps](/docs/managing-api-apps)
+* [Concepts Page](/reference/identity-developer-guide-concepts)

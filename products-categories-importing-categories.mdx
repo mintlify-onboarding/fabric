@@ -1,0 +1,59 @@
+---
+title: "Importing Categories"
+---
+
+### Overview
+
+Categories are hierarchical tree structures that allow you to organize items, variants, and bundles into groups based on similar attributes. This document covers the process of importing multiple categories using a CSV file. You can also [add categories individually](/docs/products-categories-adding-category).
+
+#### CSV File Guidelines
+
+You can import categories using CSV files only, fabric does not support any other data or file formats. Here are the key points to consider:
+
+* The headers, represented in the first row of the CSV file, should match the attributes of the category.
+* While category titles are not case-sensitive, maintaining case consistency with the original category titles is recommended.
+* Empty rows and columns are ignored.
+* We recommend that you download the template file to use as a guide when creating your own CSV file for import to minimize errors during the import process.
+
+#### Category Data Formatting
+
+When preparing your CSV file for import, ensure that the category data format aligns with the column requirements. Different columns have specific data input requirements:
+
+* **Action**: Accepts one of the following commands:  
+   * **Create** adds a new category.  
+   * **Update** replaces the details of an existing category.  
+   * **Upsert** creates a new category or replaces the details of an existing category.  
+   Note that if no action is specified for a row, upsert is considered the default.  
+   * **Delete** removes an existing category.
+* **Node ID**: Represents the Category ID.  
+   * When creating a category, this field must be left blank; otherwise, you will receive an error.  
+   * When updating, upserting, or deleting a category, enter the Node ID or Node Name.
+* **Parent Category**: Unless you are creating a primary or root category, specify the parent for the new category you want to create or update.
+* **Node Name**: Name of the root, branch, or leaf categories that you are creating or updating.
+* **Order**: The order in which a given category must appear among sibling categories. If multiple categories are assigned the same order, the newly added categories appear in alphabetical order.
+* **Product Attributes**: Attributes of products associated with a category.
+* **Category Attributes**: Attributes of a category.
+
+#### Prerequisites
+
+Ensure that you have access to the Products service in Copilot. For more information, see [Role-Based Access Control](/docs/role-based-access-control).
+
+#### Procedure
+
+1. In the left menu, click **Products > Categories**.  
+The **Categories** page is displayed.
+2. Click **Import**.  
+The **Import CSV file** window is displayed. This window provides a link to download an example template for the CSV file.
+3. To import a CSV file, do one of the following options:  
+   * Drag and drop the CSV file into the window.  
+   * Click **Select a File from your computer**.  
+   * Click **Import file**.
+
+The CSV file is imported and the changes you indicated to your categories are made.
+
+### Related Topics
+
+* [Categories Overview](/docs/products-categories)
+* [Adding a Category](/docs/products-categories-adding-category)
+* [Viewing Category Import History](/docs/products-categories-viewing-category-import-history)
+* [Managing Categories](/docs/products-categories-managing-categories)

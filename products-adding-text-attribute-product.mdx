@@ -1,0 +1,57 @@
+---
+title: "Adding a Text Attribute"
+---
+
+### Overview
+
+Text attributes allow you to add text-based information about an item, such as a description or a code snippet. You can use any combination of text, numbers, or special characters for this attribute type.
+
+### Prerequisites
+
+Ensure you have administrator privileges to fabric Products. For more information, see [Role-Based Access Control](/docs/role-based-access-control).
+
+### Procedure
+
+1. In the left menu, click **Products > Attributes > Product**.  
+The **Product Attributes** page is displayed.
+2. Click **New Attribute**.  
+The **Create product attribute** page is displayed. The **Text** attribute type is selected by default.
+3. (Optional) To enable localized titles for the attribute, set the **Localize this attribute** toggle to one of the following:  
+   * **On**: The attribute title is localized. The **Title and description** section displays additional **Attribute title** fields corresponding to the languages set up in [internationalization](https://fabric-group.readme.io/docs/internationalization-languages) settings.  
+   * **Off**: The attribute title isn't localized.
+4. In the **Attribute title (primary)** filed, enter a name for the attribute.  
+If localization is enabled in step 3, enter the localized attribute titles in the **Attribute title** field for each corresponding internationalization setting.
+5. (Optional) In the **Description** field, enter a description for the attribute.
+6. In the **Type of text** field, select one of the following:  
+   * Small text: For single-line text attributes.  
+   * Text Area: For multi-line text attributes.  
+   * Html: For text area attributes that support HTML.
+7. In the **Use JavaScript formula to calculate value** field, select one of the following:  
+   * **Yes**: Specifies that the value for the attribute is calculated using the JavaScript formula that you provide in the **Calculation formula** field. An example of a JavaScript formula is `(async () => await attribute('id') *10)()`. When you select **Yes**, the **Calculation formula** and **Allow manual overwrite** fields are displayed. Do the following to complete the settings:  
+         1. In the **Calculation formula** field, enter a JavaScript formula.  
+         2. In the **Allow manual overwrite** field, choose one of the following:  
+                  * **Yes**: Specifies that you can manually overwrite the attribute value. When the **Use JavaScript formula to calculate value** setting is enabled, the system determines the value based on your provided formula. However, if you enable the manual overwrite option, you can replace the system-calculated value with a custom value during product attribute setup. For more information, see the [Adding an Item](/docs/products-adding-item) section.  
+                  * **No**: Specifies that you cannot manually overwrite the attribute value. This is the default setting.  
+   * **No**: Specifies that the attribute value is not calculated using a JavaScript formula.
+8. In the **Validations** field, select one of the following:  
+   * **None**: Specifies that no custom validation is required for the attribute. This is the default setting.  
+   * **Custom JavaScript**: Specifies that the JavaScript you enter in the **Validation formula** field is used to validate the attribute.  
+   The **Validation formula** field is displayed.  
+         * In the **Validation formula** field, enter a JavaScript validation formula.
+9. In the **Is this attribute mandatory?** field, select one of the following:  
+   * **Yes**: Specifies that the attribute is mandatory when creating an item.  
+   * **No**: Specifies that the attribute is not mandatory when creating an item. This is the default selection.
+10. Click **Save**.
+
+The text attribute with the specified settings is created.
+
+### Related Topics
+
+* [Product Attributes Overview](/docs/product-attributes-overview)
+* [Adding a Number Only Attribute](/docs/products-adding-number-attribute)
+* [Adding a Date Attribute](/docs/products-adding-date-attribute)
+* [Adding a Boolean Attribute](/docs/products-adding-boolean-attribute)
+* [Adding a List of Values Attribute](/docs/adding-a-list-of-values-attribute)
+* [Adding a Serial Attribute](/docs/products-adding-serial-attribute)
+* [Importing Product Attributes](/docs/products-importing-product-attributes)
+* [Managing Product Attributes](/docs/products-managing-product-attributes)
